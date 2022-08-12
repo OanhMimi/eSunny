@@ -24,7 +24,7 @@ In E-Sunny, players will be able to:
 - puppy sound effects
 
 ### Wireframe: 
-![Alt text](/relative/path/to/wireframe.png?raw=true "Sunny's wireframe")
+![Alt text](./wireframe.png?raw=true "Sunny's wireframe")
 
 ### technologies:
 - Javascript for the game logic 
