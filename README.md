@@ -42,6 +42,7 @@ In E-Sunny, players will be able to:
 - Friday/Weekend
     - rendering background and puppy on screen
     - music/sound 
+    - figure out how to do a light weight backend
 - Monday
     - rendering the health/accessories/on screen
     - hover instructions/github links
