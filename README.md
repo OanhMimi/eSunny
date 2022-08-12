@@ -10,6 +10,10 @@
  - The puppy's current status will be display and the status will change according to how the player choose to interact with the puppy
  - The puppy is animated so it can show emotions such as crying and wagging its tail
 
+technology:
+- three.js / orbit controls
+- anime.js
+
  This project will include:
  - instructor: "Raise the puppy and make it happy!"
  - sound on/off
