@@ -37,3 +37,17 @@ In E-Sunny, players will be able to:
 - orbitControls.js (part of three.js that allow the camera to orbit around the puppy)
 - anime.js (ceating hair movements and directional movements)
 - game.js && game_view.js (providing animation details)
+
+### Timeline: 
+- Friday/Weekend
+    - rendering background and puppy on screen
+    - music/sound 
+- Monday
+    - rendering the health/accessories/on screen
+    - hover instructions/github links
+- Tuesday
+    - make puppy react and move 
+- Wednesday
+    - chill
+- Thursday Morning 
+    - final edits/changes
