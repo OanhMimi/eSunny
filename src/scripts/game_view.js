@@ -69,7 +69,7 @@ class GameView{
         }
 
         titleMenu(){
-            document.getElementById("game-canvas").style.backgroundImage="url(./src/assets/menu/esunny_bg.png)";
+            document.getElementById("game-canvas").style.backgroundImage="url(./src/assets/menu/sunny_bg.png)";
 
         }
 
