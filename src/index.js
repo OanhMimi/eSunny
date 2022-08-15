@@ -72,7 +72,7 @@ window.addEventListener('DOMContentLoaded', () =>{
     window.ctx = canvasEl.getContext("2d");
 
     const gameOptions = {
-        dim: [1280,720]
+        dim: [1100,680]
     }
 
     const g = new GameView(gameOptions);

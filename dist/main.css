@@ -64,11 +64,30 @@ body {
 #instructions-text {
   position: absolute;
   right: 7%;
-  top: 50%;
+  top: 45%;
   color: #d9d9d9;
   margin: 0 auto;
   width: 365px;
   height: 350px;
+  border-radius: 80px;
+}
+
+#return-to-menu{
+  cursor: pointer;
+  position: absolute;
+  z-index: 1001;
+  right: 15%;
+  bottom: 1%;
+  width: 100px;
+  font-family: 'DynaPuff', cursive;
+  margin: 0px auto;
+  margin-top: 20px;
+  width: 150px;
+  padding: 10px;
+  color:rgb(255, 255, 255);
+  text-shadow: 1px 1px rgb(84, 79, 79);
+  border-radius: 100px;
+  background: linear-gradient(0.25turn,rgb(172, 255, 236) 10%, pink 70%);
 }
 
 .social-buttons {
@@ -80,13 +99,12 @@ body {
 
 .social-buttons img {
   margin-right: 10px;
-  width: 34px;
-  height: 34px;
+  width: 30px;
+  height: 30px;
 }
 
 .game-settings-buttons {
   display: flex;
-  flex-direction: column;
   position: absolute;
   top: 15px;
   right: 15px;
@@ -94,12 +112,14 @@ body {
 
 .game-settings-buttons img {
   margin-bottom: 10px;
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
 }
 
 .game-settings-buttons img:hover {
   cursor: pointer;
+  transform: translateY(-6px);
+
 }
 
 #game-canvas {

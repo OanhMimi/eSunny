@@ -13,7 +13,6 @@ class Menu{
     displayMenuScreen(ctx){
         ctx.clearRect(0,0,this.dimX,this.dimY); //clearRect erases the pixels in a rectangular area by setting them to transparant black
         ctx.drawImage(this.menuBackground,0,0);
-        ctx.drawImage(this.sunnyTitle,this.dimX*.45,100);
     }
 }   
 

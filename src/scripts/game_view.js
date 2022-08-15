@@ -1,10 +1,10 @@
 import Menu from "./menu.js";
 
 class GameView{
-    constructor(params){
+    constructor(params){ //[1100,680]
         this.params = params;
-        this.dimX = params["dim"][0];
-        this.dimY= params["dim"][1];
+        this.dimX = params["dim"][0]; //[1100]
+        this.dimY= params["dim"][1]; //[680]
         // this.menu = new Menu(params);
         this.ctx = ctx;
         this.animateBool = true;
