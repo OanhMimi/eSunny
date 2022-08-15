@@ -63,13 +63,19 @@ body {
 
 #instructions-text {
   position: absolute;
-  right: 7%;
-  top: 45%;
+  right: 13%;
+  top: 50%;
   color: #d9d9d9;
   margin: 0 auto;
-  width: 365px;
-  height: 350px;
+  width: 200px;
+  height: 240px;
   border-radius: 80px;
+}
+
+#instructions-text img{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
 }
 
 #return-to-menu{
@@ -77,7 +83,7 @@ body {
   position: absolute;
   z-index: 1001;
   right: 15%;
-  bottom: 1%;
+  bottom: 5%;
   width: 100px;
   font-family: 'DynaPuff', cursive;
   margin: 0px auto;
@@ -95,7 +101,6 @@ body {
   left: 15px;
   bottom: 15px;
   display: flex;
-
 }
 
 .social-buttons img {
@@ -132,4 +137,8 @@ body {
 
 #game-canvas {
   border-radius: 25px;
+}
+
+#shadow-dog-image{
+  
 }
