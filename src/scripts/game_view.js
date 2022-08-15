@@ -5,7 +5,7 @@ class GameView{
         this.params = params;
         this.dimX = params["dim"][0];
         this.dimY= params["dim"][1];
-        this.menu = new Menu(params);
+        // this.menu = new Menu(params);
         this.ctx = ctx;
         this.animateBool = true;
         this.clearScreen = false;
@@ -69,7 +69,7 @@ class GameView{
         }
 
         titleMenu(){
-            document.getElementById("game-canvas").style.backgroundImage="url(./src/assets/menu/sunny_title_screen_bg.png)";
+            document.getElementById("game-canvas").style.backgroundImage="url(./src/assets/menu/esunny_bg.png)";
 
         }
 
