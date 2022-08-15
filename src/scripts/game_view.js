@@ -44,13 +44,13 @@ class GameView{
         const spriteWidth = 575;
         const spriteHeight = 523; 
         let frameX = 0;
-        let frameY = 0;
+        let frameY = 2;
         let gameFrame = 0;
-        const staggerFrames = 5;
+        const staggerFrames = 10;
 
         function animateSunnyMenu(){
             ctx.clearRect(0,0,1100,680); //clear the entire canvas between every animation frame
-            ctx.drawImage(sunnyMenuImage, frameX*spriteWidth,frameY*spriteHeight,spriteWidth,spriteHeight,0,0,spriteWidth,spriteHeight); //(imageuwanttodraw,srcx,srcy,srcwidth,srcheight,dx,dy,dw,dh)
+            ctx.drawImage(sunnyMenuImage, frameX*spriteWidth,frameY*spriteHeight,spriteWidth,spriteHeight,230,350,150,150); //(imageuwanttodraw,srcx,srcy,srcwidth,srcheight,dx,dy,dw,dh)
             if (gameFrame % staggerFrames === 0){
                 if (frameX < 6) frameX++;
                 else frameX = 0;
@@ -110,7 +110,7 @@ class GameView{
         }
 
         titleMenu(){
-            document.getElementById("game-canvas").style.backgroundImage="url(./src/assets/menu/sunny_bg.png)";
+            document.getElementById("game-canvas").style.backgroundImage="url(./src/assets/menu/sunny_title_bg.png)";
 
         }
 
