@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="./dist/main.css" />
     <script src="./dist/main.js"></script>
+    <!-- <script src="js/three.js"></script> -->
     <!-- <script src="./src/styles/index.js"></script> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eSunny</title>
@@ -15,12 +16,13 @@
 
 </head>
 <body>
-    <div class="canvas-container">
+    <div class="canvas-container ">
         <canvas id="game-canvas" width="1100" height ="680"></canvas>
 
         <nav id="btn-nav">
             <ul class="menu-button">
-                <li id="play-btn">Play</li>
+                <li id="textplay-btn">Play</li>
+                <li id="play-btn">Enter Sunny's House</li>
                 <li id="instructions-btn">Instructions</li>
             </ul>
         </nav>
@@ -28,11 +30,12 @@
         <div id="instructions-text" hidden>
             <img src="./src/assets/menu/sunny_instructions.png" alt="instructions">
         </div>
+
         <div id="return-to-menu" hidden>Go back to Menu</div>
 
         <div class="social-buttons">
-            <a href="https://github.com/OanhMimi/eSunny-JavaScript"><img src="./src/assets/icons/github_icon.png" alt="Github icon"></a>
-            <a href="https://www.linkedin.com/in/lyoanhmymimi/"><img src="./src/assets/icons/LinkedIn_icon_circle.svg.png" alt="LinkedIn icon"></a>
+            <a href="https://github.com/OanhMimi/eSunny-JavaScript"><img src="./src/assets/icons/github_logo.png" alt="Github icon"></a>
+            <a href="https://www.linkedin.com/in/lyoanhmymimi/"><img src="./src/assets/icons/linkedin_logo.png" alt="LinkedIn icon"></a>
         </div>
 
         <div class="game-settings-buttons">
@@ -42,10 +45,25 @@
         </div>
 
         <div class="shadow">
-            <img id="shadow-dog-image" src="./src/assets/menu/sunny_sprite.png" alt="Shadow Dog Image">
+            <img id="sunny-sprite-image" src="./src/assets/menu/sunny_sprite.png" alt="Sunny Sprites Image" hidden>
+        </div>
+
+        <canvas class ="hidden" id="housecanvas" width= 1100 height=680></canvas>
+        <canvas class = "hidden" id="adventureCanvas" width="1100" height="680"></canvas>
+      
+        <progress id="health" value="100" max="100"></progress>
+        <div class="sunny-status">
+            <p id="hunger-level" class="hidden">Hunger Level: </p>
+            <p id="thirst-level" class="hidden">Thirst Level: </p>
         </div>
         
+
+        
+
     </div>
+    <!-- <div class="another-canvas-container">
+        <canvas class ="hidden" id="house-canvas" width= 1100 height=680></canvas>
+    </div> -->
 
     <audio id="background-music" src="./src/assets/audio/sunnyDay_audio.mp3">Background music</audio>
 </body>

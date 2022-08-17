@@ -5,13 +5,22 @@ body {
   background-color: rgb(248, 240, 209);
 }
 
-
 body {
   display: block;
   text-align: center;
 }
 
 .canvas-container {
+  padding: 0;
+  margin: auto;
+  position: relative;
+  width: 1100px;
+  height: 680px;
+  border: solid 15px rgb(192, 239, 208);
+  border-radius: 40px;
+}
+
+.another-canvas-container {
   padding: 0;
   margin: auto;
   position: relative;
@@ -43,12 +52,11 @@ body {
   width: 150px;
   padding: 20px;
   color: #313133;
-  font-family: 'DynaPuff', cursive;  
+  font-family: "DynaPuff", cursive;
   border-radius: 10px;
-  text-shadow: 1px 1px rgb(73, 73, 73);
   text-transform: uppercase;
   letter-spacing: 1.3px;
-  background: linear-gradient(90deg, rgb(238, 239, 162) 0%, rgb(198, 161, 249) 100%);
+  background: linear-gradient(90deg, rgb(238, 239, 162) 10%, rgb(208, 191, 231) 80%);
   border: none;
   border-radius: 100px;
   box-shadow: 12px 12px 24px rgba(39, 136, 126, 0.64);
@@ -72,28 +80,28 @@ body {
   border-radius: 80px;
 }
 
-#instructions-text img{
+#instructions-text img {
   height: 100%;
   width: 100%;
   object-fit: contain;
 }
 
-#return-to-menu{
+#return-to-menu {
   cursor: pointer;
   position: absolute;
   z-index: 1001;
   right: 15%;
   bottom: 5%;
   width: 100px;
-  font-family: 'DynaPuff', cursive;
+  font-family: "DynaPuff", cursive;
   margin: 0px auto;
   margin-top: 20px;
   width: 150px;
   padding: 10px;
-  color:rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
   text-shadow: 1px 1px rgb(84, 79, 79);
   border-radius: 100px;
-  background: linear-gradient(0.25turn,rgb(172, 255, 236) 10%, pink 70%);
+  background: linear-gradient(0.25turn, rgb(172, 255, 236) 10%, pink 70%);
 }
 
 .social-buttons {
@@ -107,13 +115,11 @@ body {
   margin-right: 10px;
   width: 30px;
   height: 30px;
-
 }
 
 .social-buttons img:hover {
   cursor: pointer;
   transform: translateY(-6px);
-
 }
 
 .game-settings-buttons {
@@ -132,13 +138,32 @@ body {
 .game-settings-buttons img:hover {
   cursor: pointer;
   transform: translateY(-6px);
-
 }
 
 #game-canvas {
   border-radius: 25px;
 }
 
+.hidden {
+  display: none;
+}
 
+#playGameImg {
+  display: flex;
+  justify-content: center;
+}
 
+#water-img:hover {
+  cursor: pointer;
+  transform: translate(-6px);
+}
 
+#health {
+  top: 50%;
+}
+
+.sunny-status {
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1;
+}
