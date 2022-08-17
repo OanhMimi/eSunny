@@ -151,20 +151,320 @@ body {
     justify-content: center;
   }
 
+  #water-img{
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    top: 43%;
+    left: 27%;
+  }
   #water-img:hover{
     cursor: pointer;
-    transform: translate(-6px);
+    transform: translateY(-6px);
   }
 
-  #health{
-    top: 50%
+  #water{
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    top: 40%;
+    left: 27%;
   }
+
+  #food-img{
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    top: 43%;
+    left: 20%;
+  }
+
+  #food-img:hover{
+    cursor: pointer;
+    transform: translateY(-6px);
+  }
+
+  #food{
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    top: 40%;
+    left: 20%;
+  }
+
+  #thirst-img{
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    top: 15%;
+    left: 20.5%;
+  }
+
+  #hunger-img{
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    top: 9.7%;
+    left: 20.5%;
+  }
+
+  #hygiene-img{
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    top: 20%;
+    left: 20.5%;
+  }
+
+  #shampoo-img{
+    width: 180px;
+    height: 180px;
+    position: fixed;
+    bottom: 20%;
+    right: 25%;
+  }
+
+  #shampoo-img:hover{
+    cursor: pointer;
+    transform: translateY(-6px);
+  }
+
+  #soap{
+    width: 11vw;
+    height: 15vh;
+    position: fixed;
+    bottom: 26%;
+    right: 28%;
+  }
+
 
   .sunny-status{
-    display: flex;
-    justify-content: flex-end;
+    font-family: "DynaPuff", cursive;    
+    font-size: 14px;
+    color: aquamarine;
+    -webkit-text-stroke: .7px rgb(0, 0, 0);
+    position: fixed; //uses pixel or percent
+    top: 10%;
+    left: 14%;
     z-index: 1;
+    line-height: 2;
   }
 
+  #healthbar1-img{
+    position: fixed;
+    width: 100px;
+    height: 90px;
+    top: 7.5%;
+    left: 24.3%;
+  }
+
+  #healthbar2-img{
+    position: fixed;
+    width: 100px;
+    height: 90px;
+    top: 7.5%;
+    left: 24.3%;
+  }
+
+  #healthbar3-img{
+    position: fixed;
+    width: 100px;
+    height: 90px;
+    top: 7.5%;
+    left: 24.3%;
+  }
+
+  #healthbar4-img{
+    position: fixed;
+    width: 100px;
+    height: 90px;
+    top: 7.5%;
+    left: 24.3%;
+  }
+
+  #healthbar5-img{
+    position: fixed;
+    width: 100px;
+    height: 90px;
+    top: 7.5%;
+    left: 24.3%;
+  }
+
+
+  #healthbar2-1-img{
+    position: fixed;
+    width: 100px;
+    height: 90px;
+    top: 13%;
+    left: 24.3%;
+  }
+
+  #healthbar2-2-img{
+    position: fixed;
+    width: 100px;
+    height: 90px;
+    top: 13%;
+    left: 24.3%;
+  }
+
+  #healthbar2-3-img{
+    position: fixed;
+    width: 100px;
+    height: 90px;
+    top: 13%;
+    left: 24.3%;
+  }
+
+  #healthbar2-4-img{
+    position: fixed;
+    width: 100px;
+    height: 90px;
+    top: 13%;
+    left: 24.3%;
+  }
+
+  #healthbar2-5-img{
+    position: fixed;
+    width: 100px;
+    height: 90px;
+    top: 13%;
+    left: 24.3%;
+  }
+
+
+  #healthbar3-1-img{
+    position: fixed;
+    width: 100px;
+    height: 90px;
+    top: 18.5%;
+    left: 24.3%;
+  }
+
+  #healthbar3-2-img{
+    position: fixed;
+    width: 100px;
+    height: 90px;
+    top: 18.5%;
+    left: 24.3%;
+  }
+
+  #healthbar3-3-img{
+    position: fixed;
+    width: 100px;
+    height: 90px;
+    top: 18.5%;
+    left: 24.3%;
+  }
+
+  #healthbar3-4-img{
+    position: fixed;
+    width: 100px;
+    height: 90px;
+    top: 18.5%;
+    left: 24.3%;
+  }
+
+  #healthbar3-5-img{
+    position: fixed;
+    width: 100px;
+    height: 90px;
+    top: 13%;
+    left: 24.3%;
+  }
+
+  #sunnyImg1{
+    position: fixed;
+    width: 180px;
+    height: 180px;
+    top: 50%;
+    left: 50%;
+  }
+
+  #sunnyImg2{
+    position: fixed;
+    width: 180px;
+    height: 180px;
+    top: 50%;
+    left: 50%;
+  }
+
+  #heartOne{
+    position: fixed;
+    width: 6vw;
+    height: 10vh;
+    top: 17%;
+    right: 15%;
+  }
+
+  #heartTwo{
+    position: fixed;
+    width: 6vw;
+    height: 10vh;
+    top: 24%;
+    right: 15%;
+  }
+
+  #heartThree{
+    position: fixed;
+    width: 6vw;
+    height: 10vh;
+    top: 31%;
+    right: 15%;
+  }
+
+  #heartFour{
+    position: fixed;
+    width: 6vw;
+    height: 10vh;
+    top: 38%;
+    right: 15%;
+  }
+
+  #heartFive{
+    position: fixed;
+    width: 6vw;
+    height: 10vh;
+    top: 45%;
+    right: 15%;
+  }
+
+  #emptyHeartOne{
+    position: fixed;
+    width: 6vw;
+    height: 10vh;
+    top: 17%;
+    right: 15%;
+  }
+
+  #emptyHeartTwo{
+    position: fixed;
+    width: 6vw;
+    height: 10vh;
+    top: 24%;
+    right: 15%;
+  }
+
+  #emptyHeartThree{
+    position: fixed;
+    width: 6vw;
+    height: 10vh;
+    top: 31%;
+    right: 15%;
+  }
+
+  #emptyHeartFour{
+    position: fixed;
+    width: 6vw;
+    height: 10vh;
+    top: 38%;
+    right: 15%;
+  }
   
+  #emptyHeartFive{
+    position: fixed;
+    width: 6vw;
+    height: 10vh;
+    top: 45%;
+    right: 15%;
+  }
   

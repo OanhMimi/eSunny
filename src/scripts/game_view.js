@@ -1,6 +1,7 @@
 // import Menu from "./menu.js";
 import Game from "./game.js";
 import playGame from "./playGame.js"
+import sunnyDrawImages from "./sunnyDrawImages.js"
 
 class GameView{
     constructor(params){ //[1100,680]
@@ -25,8 +26,10 @@ class GameView{
         const menuButton = document.getElementById("menu-btn");
         const returnMenuButton = document.getElementById("return-to-menu");
         const textPlayButton = document.getElementById("textplay-btn");
-        const hungerLevel = document.getElementById("hunger-level")
-        const thirstLevel = document.getElementById("thirst-level")
+        const hungerLevel = document.getElementById("hunger-level");
+        const thirstLevel = document.getElementById("thirst-level");
+        const hygieneLevel = document.getElementById("hygiene-level");
+        const statusBar = document.getElementById("health");
 
 
     
@@ -78,6 +81,8 @@ class GameView{
         textPlayButton.addEventListener("click",function(){
             hungerLevel.classList.remove("hidden");
             thirstLevel.classList.remove("hidden");
+            hygieneLevel.classList.remove("hidden");
+
             textPlayButton.hidden = true;
             playButton.hidden = true;
             instructionButton.hidden = true;
@@ -86,127 +91,128 @@ class GameView{
             canvas3.classList.remove("hidden");
             if(canvas3.getContext){
                 var layout = canvas3.getContext('2d');
-                var sunnyImg = new Image();
-                sunnyImg.src = "./src/models/sunny_1.png";
-                //need to figure out how to use setTimeout to switch between two images
-                //until a click is trigger, then it stops
+                sunnyDrawImages(layout);
+                // var sunnyImg = new Image();
+                // sunnyImg.src = "./src/models/sunny_1.png";
+                // //need to figure out how to use setTimeout to switch between two images
+                // //until a click is trigger, then it stops
               
-                var sunnyImg2 = new Image();
-                sunnyImg2 = "./src/models/sunny_2.png"
-                let imgToDraw = "one";
-                if (imgToDraw === "one"){
-                    sunnyImg.onload = function(){
-                        layout.drawImage(sunnyImg,500,360,170,170)
-                    }
-                    imgToDraw = "two";
-                }else{
-                    sunnyImg2.onload = function(){
-                        layout.drawImage(sunnyImg2,500,360,170,170)
-                    }
-                    imgToDraw = "one";
-                }
+                // var sunnyImg2 = new Image();
+                // sunnyImg2 = "./src/models/sunny_2.png"
+                // let imgToDraw = "one";
+                // if (imgToDraw === "one"){
+                //     sunnyImg.onload = function(){
+                //         layout.drawImage(sunnyImg,500,360,170,170)
+                //     }
+                //     imgToDraw = "two";
+                // }else{
+                //     sunnyImg2.onload = function(){
+                //         layout.drawImage(sunnyImg2,500,360,170,170)
+                //     }
+                //     imgToDraw = "one";
+                // }
 
 
-                var waterImg = new Image();
-                waterImg.src = "./src/models/sunny_water.png";
-                document.body.appendChild(waterImg)
-                waterImg.style.borderRadius = "10px"
-                waterImg.setAttribute("id", "water-img");  
-                waterImg.onload = function(){
-                    layout.drawImage(waterImg,215,310,100,100)
-                }
-                waterImg.addEventListener("click",function(){
-                    console.log("clicked")
-                })
-                var FoodImg = new Image();
-                FoodImg.src = "./src/models/sunny_food.png";
-                FoodImg.onload = function(){
-                    layout.drawImage(FoodImg,100,310,100,100)
-                }
-                var thirstImg = new Image();
-                thirstImg.src = "./src/models/sunny_thirst1.png";
-                thirstImg.onload = function(){
-                    layout.drawImage(thirstImg,15,100,100,100)
-                }
-                var hungerImg = new Image();
-                hungerImg.src = "./src/models/sunny_hunger1.png";
-                hungerImg.onload = function(){
-                    layout.drawImage(hungerImg,15,50,100,100)
-                }
+                // var waterImg = new Image();
+                // waterImg.src = "./src/models/sunny_water.png";
+                // // document.body.appendChild(waterImg)
+                // waterImg.style.borderRadius = "10px"
+                // waterImg.setAttribute("id", "water-img");  
+                // waterImg.onload = function(){
+                //     layout.drawImage(waterImg,215,310,100,100)
+                // }
+                // waterImg.addEventListener("click",function(){
+                //     console.log("clicked")
+                // })
+                // var FoodImg = new Image();
+                // FoodImg.src = "./src/models/sunny_food.png";
+                // FoodImg.onload = function(){
+                //     layout.drawImage(FoodImg,100,310,100,100)
+                // }
+                // var thirstImg = new Image();
+                // thirstImg.src = "./src/models/sunny_thirst1.png";
+                // thirstImg.onload = function(){
+                //     layout.drawImage(thirstImg,15,100,100,100)
+                // }
+                // var hungerImg = new Image();
+                // hungerImg.src = "./src/models/sunny_hunger1.png";
+                // hungerImg.onload = function(){
+                //     layout.drawImage(hungerImg,15,50,100,100)
+                // }
 
-                var hygeineImg = new Image();
-                hygeineImg.src = "./src/models/sunny_hygeine.png";
-                hygeineImg.onload = function(){
-                    layout.drawImage(hygeineImg,15,150,100,100)
-                }
+                // var hygeineImg = new Image();
+                // hygeineImg.src = "./src/models/sunny_hygeine.png";
+                // hygeineImg.onload = function(){
+                //     layout.drawImage(hygeineImg,15,150,100,100)
+                // }
 
-                var shampooImg = new Image();
-                shampooImg.src = "./src/models/sunny_soap.png";
-                shampooImg.onload = function(){
-                    layout.drawImage(shampooImg,750,370,200,200)
-                }
-                //**because i created the image in js, how do i refer to it in css if i want to edit? */
+                // var shampooImg = new Image();
+                // shampooImg.src = "./src/models/sunny_soap.png";
+                // shampooImg.onload = function(){
+                //     layout.drawImage(shampooImg,750,370,200,200)
+                // }
+                // //**because i created the image in js, how do i refer to it in css if i want to edit? */
 
-                //need to figure out how to make heart empty
-                // idea is to have heart empty hidden and when either
-                //the thirst or hunger level is below a certain point,
-                // one of the hidden heart appears and the full hearts disappears
-                var sunnyHeart = new Image();
-                sunnyHeart.src = "./src/models/sunnyheart_full.png";
-                sunnyHeart.onload = function(){
-                    layout.drawImage(sunnyHeart,1000,100,100,100)
-                }
-                var sunnyHeart = new Image();
-                sunnyHeart.src = "./src/models/sunnyheart_full.png";
-                sunnyHeart.onload = function(){
-                    layout.drawImage(sunnyHeart,1000,160,100,100)
-                }
-                var sunnyHeart = new Image();
-                sunnyHeart.src = "./src/models/sunnyheart_full.png";
-                sunnyHeart.onload = function(){
-                    layout.drawImage(sunnyHeart,1000,220,100,100)
-                }
-                var sunnyHeart = new Image();
-                sunnyHeart.src = "./src/models/sunnyheart_full.png";
-                sunnyHeart.onload = function(){
-                    layout.drawImage(sunnyHeart,1000,280,100,100)
-                }
-                var sunnyHeart = new Image();
-                sunnyHeart.src = "./src/models/sunnyheart_full.png";
-                sunnyHeart.onload = function(){
-                    layout.drawImage(sunnyHeart,1000,340,100,100)
-                }
-                //sunny heart empty
+                // //need to figure out how to make heart empty
+                // // idea is to have heart empty hidden and when either
+                // //the thirst or hunger level is below a certain point,
+                // // one of the hidden heart appears and the full hearts disappears
+                // var sunnyHeart = new Image();
+                // sunnyHeart.src = "./src/models/sunnyheart_full.png";
+                // sunnyHeart.onload = function(){
+                //     layout.drawImage(sunnyHeart,1000,100,100,100)
+                // }
+                // var sunnyHeart = new Image();
+                // sunnyHeart.src = "./src/models/sunnyheart_full.png";
+                // sunnyHeart.onload = function(){
+                //     layout.drawImage(sunnyHeart,1000,160,100,100)
+                // }
+                // var sunnyHeart = new Image();
+                // sunnyHeart.src = "./src/models/sunnyheart_full.png";
+                // sunnyHeart.onload = function(){
+                //     layout.drawImage(sunnyHeart,1000,220,100,100)
+                // }
+                // var sunnyHeart = new Image();
+                // sunnyHeart.src = "./src/models/sunnyheart_full.png";
+                // sunnyHeart.onload = function(){
+                //     layout.drawImage(sunnyHeart,1000,280,100,100)
+                // }
+                // var sunnyHeart = new Image();
+                // sunnyHeart.src = "./src/models/sunnyheart_full.png";
+                // sunnyHeart.onload = function(){
+                //     layout.drawImage(sunnyHeart,1000,340,100,100)
+                // }
+                // //sunny heart empty
 
-                var sunnyHeartEmpty = new Image();
-                sunnyHeartEmpty.src = "./src/models/sunnyheart_empty.png";
-                sunnyHeartEmpty.onload = function(){
-                    layout.drawImage(sunnyHeartEmpty,1000,100,100,100)
-                }
+                // var sunnyHeartEmpty = new Image();
+                // sunnyHeartEmpty.src = "./src/models/sunnyheart_empty.png";
+                // sunnyHeartEmpty.onload = function(){
+                //     layout.drawImage(sunnyHeartEmpty,1000,100,100,100)
+                // }
 
-                var sunnyHeartEmpty = new Image();
-                sunnyHeartEmpty.src = "./src/models/sunnyheart_empty.png";
-                sunnyHeartEmpty.onload = function(){
-                    layout.drawImage(sunnyHeartEmpty,1000,160,100,100)
-                }
+                // var sunnyHeartEmpty = new Image();
+                // sunnyHeartEmpty.src = "./src/models/sunnyheart_empty.png";
+                // sunnyHeartEmpty.onload = function(){
+                //     layout.drawImage(sunnyHeartEmpty,1000,160,100,100)
+                // }
 
-                var sunnyHeartEmpty = new Image();
-                sunnyHeartEmpty.src = "./src/models/sunnyheart_empty.png";
-                sunnyHeartEmpty.onload = function(){
-                    layout.drawImage(sunnyHeartEmpty,1000,220,100,100)
-                }
+                // var sunnyHeartEmpty = new Image();
+                // sunnyHeartEmpty.src = "./src/models/sunnyheart_empty.png";
+                // sunnyHeartEmpty.onload = function(){
+                //     layout.drawImage(sunnyHeartEmpty,1000,220,100,100)
+                // }
 
-                var sunnyHeartEmpty = new Image();
-                sunnyHeartEmpty.src = "./src/models/sunnyheart_empty.png";
-                sunnyHeartEmpty.onload = function(){
-                    layout.drawImage(sunnyHeartEmpty,1000,280,100,100)
-                }
+                // var sunnyHeartEmpty = new Image();
+                // sunnyHeartEmpty.src = "./src/models/sunnyheart_empty.png";
+                // sunnyHeartEmpty.onload = function(){
+                //     layout.drawImage(sunnyHeartEmpty,1000,280,100,100)
+                // }
 
-                var sunnyHeartEmpty = new Image();
-                sunnyHeartEmpty.src = "./src/models/sunnyheart_empty.png";
-                sunnyHeartEmpty.onload = function(){
-                    layout.drawImage(sunnyHeartEmpty,1000,340,100,100)
-                }
+                // var sunnyHeartEmpty = new Image();
+                // sunnyHeartEmpty.src = "./src/models/sunnyheart_empty.png";
+                // sunnyHeartEmpty.onload = function(){
+                //     layout.drawImage(sunnyHeartEmpty,1000,340,100,100)
+                // }
 
 
 
@@ -326,3 +332,4 @@ export default GameView;
 //    - how to get the heart disappears and reappears
 //3. neater code? how can i use other classes
 //4. how do i get the menu button to return to menu?
+//5. make it draggable
