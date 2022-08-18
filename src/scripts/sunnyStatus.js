@@ -60,6 +60,8 @@ class SunnyStatus {
       bodysoap: document.getElementById("shampoo-img"),
     };
 
+   
+
     this.waterImg = document.getElementById("water-img");
     this.foodImg = document.getElementById("food-img");
     this.thirstImg = document.getElementById("thirst-img");
@@ -299,21 +301,21 @@ class SunnyStatus {
     this.hungerInterval = setInterval(() => {
       this.hunger -= 1;
       this.decrementFoodHealthBar();
-    }, 1000);
+    }, 3500);
   }
 
   startThirstInterval() {
     this.thirstInterval = setInterval(() => {
       this.thirst -= 1;
       this.decrementWaterHealthBar();
-    }, 1000);
+    }, 2000);
   }
 
   startCleanlinessInterval() {
     this.cleanlinessInterval = setInterval(() => {
       this.cleanliness -= 1;
       this.decrementCleanlinessHealthBar();
-    }, 1000);
+    }, 4500);
   }
 
   gameOver() {
@@ -330,6 +332,9 @@ class SunnyStatus {
     deadSunnyImg.src = "./src/models/sunny_sleeping.png";
     document.body.appendChild(deadSunnyImg);
     deadSunnyImg.setAttribute("id", "deadSunny");
+    document.querySelector("#water").classList.add("hidden");
+    document.querySelector("#food").classList.add("hidden");
+    document.querySelector("#soap").classList.add("hidden");
 
     this.sunnyHearts.fullHeart1.classList.add("hidden");
     this.sunnyHearts.fullHeart2.classList.add("hidden");
@@ -370,6 +375,9 @@ class SunnyStatus {
     document.querySelector("#sunnyImg2").remove();
 
     this.mainMenu.addEventListener("click", () => {
+      document.querySelector("#water").classList.add("hidden");
+      document.querySelector("#food").classList.add("hidden");
+      document.querySelector("#soap").classList.add("hidden");
       this.textPlayButton.innerText = "Play";
       this.mainMenu.classList.add("hidden")
       gameOverImg.remove();
@@ -380,8 +388,6 @@ class SunnyStatus {
       document.querySelector("#adventureBg").classList.add("hidden");
       document.querySelector("#instructions-btn").classList.remove("hidden");
       document.querySelector("#play-btn").classList.remove("hidden");
-
-
 
       this.canvas3.classList.add("hidden");
       this.playAgain.classList.add("hidden");
@@ -427,6 +433,9 @@ class SunnyStatus {
       gameOverImg.remove();
       losingImg.remove();
       deadSunnyImg.remove();
+      document.querySelector("#water").classList.add("hidden");
+      document.querySelector("#food").classList.add("hidden");
+      document.querySelector("#soap").classList.add("hidden");
       document.querySelector("#main-menu").classList.add("hidden");
 
       
