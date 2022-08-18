@@ -41,14 +41,17 @@ In E-Sunny, players will be able to:
 ### Timeline: 
 - Friday/Weekend
     - rendering background and puppy on screen
-    - music/sound 
-    - figure out how to do a light weight backend
+    - create splash page image 
+    - social links
+    - background music
 - Monday
     - rendering the health/accessories/on screen
-    - hover instructions/github links
+    - hover instructions
+    - create sprite images of Sunny and backgrounds
 - Tuesday
-    - make puppy react and move 
+    - hover/click effects and healthbars
+    - interactive elements like clicking food/water/shampoo
 - Wednesday
-    - chill
+    - fixing the game logic and debug
 - Thursday Morning 
     - final edits/changes
