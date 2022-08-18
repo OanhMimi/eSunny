@@ -29,9 +29,7 @@ function drawImages(layout){
                 // waterImg.onload = function(){
                 //     layout.drawImage(waterImg,215,310,100,100)
                 // }
-                waterImg.addEventListener("click",function(){
-                    console.log("clicked")
-                })
+               
                 var foodImg = new Image();
                 foodImg.src = "./src/models/sunny_food.png";
                 document.body.appendChild(foodImg);
@@ -137,15 +135,15 @@ function drawImages(layout){
                         document.body.appendChild(sunnyHealthBar3Img3);
                         sunnyHealthBar3Img3.setAttribute("id","healthbar3-3-img");
 
-                            var sunnyHealthBar4Img4 = new Image();
-                            sunnyHealthBar4Img4.src = "./src/models/healthbar4.png"
-                            document.body.appendChild(sunnyHealthBar4Img4);
-                            sunnyHealthBar4Img4.setAttribute("id","healthbar3-4-img");
+                            var sunnyHealthBar3Img4 = new Image();
+                            sunnyHealthBar3Img4.src = "./src/models/healthbar4.png"
+                            document.body.appendChild(sunnyHealthBar3Img4);
+                            sunnyHealthBar3Img4.setAttribute("id","healthbar3-4-img");
 
-                                var sunnyHealthBar4Img5 = new Image();
-                                sunnyHealthBar4Img5.src = "./src/models/healthbar5.png";
-                                document.body.appendChild(sunnyHealthBar4Img5);
-                                sunnyHealthBar4Img5.setAttribute("id","healthbar3-5-img");
+                                var sunnyHealthBar3Img5 = new Image();
+                                sunnyHealthBar3Img5.src = "./src/models/healthbar5.png";
+                                document.body.appendChild(sunnyHealthBar3Img5);
+                                sunnyHealthBar3Img5.setAttribute("id","healthbar3-5-img");
 
 
                 //**because i created the image in js, how do i refer to it in css if i want to edit? */
@@ -177,8 +175,8 @@ function drawImages(layout){
 
                 var sunnyHeart5 = new Image();
                 sunnyHeart5.src = "./src/models/sunnyheart_full.png";
-                document.body.appendChild(sunnyHeart4);
-                sunnyHeart4.setAttribute("id","heartFive");
+                document.body.appendChild(sunnyHeart5);
+                sunnyHeart5.setAttribute("id","heartFive");
 
 
                 //sunny heart empty
@@ -189,7 +187,7 @@ function drawImages(layout){
 
                 var sunnyHeartEmpty2 = new Image();
                 sunnyHeartEmpty2.src = "./src/models/sunnyheart_empty.png";
-                document.body.appendChild(sunnyHeartEmpty1);
+                document.body.appendChild(sunnyHeartEmpty2);
                 sunnyHeartEmpty2.setAttribute("id","emptyHeartTwo");
 
                 var sunnyHeartEmpty3 = new Image();
@@ -213,7 +211,7 @@ function drawImages(layout){
                 water.classList.add("hidden");
                 water.setAttribute("id","water");
                 waterImg.addEventListener("click", function(){
-                    water.classList.remove("hidden") 
+                    water.classList.remove("hidden")
                 })
 
                 var food = new Image();

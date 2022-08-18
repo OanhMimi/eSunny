@@ -2,6 +2,7 @@
 import Game from "./game.js";
 import playGame from "./playGame.js"
 import sunnyDrawImages from "./sunnyDrawImages.js"
+import sunnyStatus from "./sunnyStatus.js"
 
 class GameView{
     constructor(params){ //[1100,680]
@@ -40,7 +41,6 @@ class GameView{
 
         const backgroundMusic = new Audio();
         backgroundMusic.src = './src/assets/audio/sunnyDay_audio.mp3'
-
         let backgroundON = false;
         volumeButton.addEventListener("click",function (){
             console.log(backgroundON);
@@ -76,6 +76,26 @@ class GameView{
 
         animateSunnyMenu();
 
+        
+        const sunnyBestFriend1 = new Image();
+        sunnyBestFriend1.src = ('./src/models/sunnytitle_1.png');
+        document.body.appendChild(sunnyBestFriend1);
+        sunnyBestFriend1.setAttribute("id","sunnyBestFriend1");
+        const sunnyBestFriend2 = new Image();
+        sunnyBestFriend2.src = ('./src/models/sunnytitle_2.png');
+        document.body.appendChild(sunnyBestFriend2);
+        sunnyBestFriend2.setAttribute("id","sunnyBestFriend2");
+        let switchImg = "two"
+        const sunnyBestFriendInterval = setInterval(() => {
+            if (switchImg === "one"){
+                sunnyBestFriend2.classList.add("hidden")
+                sunnyBestFriend1.classList.remove("hidden")
+            }else{
+                sunnyBestFriend1.classList.add("hidden")
+                sunnyBestFriend2.classList.remove("hidden")
+            }
+            switchImg = switchImg === "one" ? "two" : "one";
+        }, 300);
 
         
         textPlayButton.addEventListener("click",function(){
@@ -89,9 +109,15 @@ class GameView{
             menuButton.hidden = false;
             canvas.classList.add("hidden");
             canvas3.classList.remove("hidden");
+            clearInterval(sunnyBestFriendInterval);
+            sunnyBestFriend1.classList.add("hidden");
+            sunnyBestFriend2.classList.add("hidden")
+
             if(canvas3.getContext){
                 var layout = canvas3.getContext('2d');
                 sunnyDrawImages(layout);
+                let startGame = new sunnyStatus();
+
                 // var sunnyImg = new Image();
                 // sunnyImg.src = "./src/models/sunny_1.png";
                 // //need to figure out how to use setTimeout to switch between two images

@@ -5,6 +5,7 @@ body {
   body {
     display: block;
     text-align: center;
+    overflow: hidden;
   }
   
   .canvas-container {
@@ -15,6 +16,7 @@ body {
     height: 680px;
     border: solid 15px rgb(192, 239, 208);
     border-radius: 40px;
+    background-size: 100% 100%;
   }
   
   .another-canvas-container {
@@ -25,6 +27,7 @@ body {
     height: 680px;
     border: solid 15px rgb(192, 239, 208);
     border-radius: 40px;
+    background-size: 100% 100%;
   }
   
   .game-canvas {
@@ -232,7 +235,7 @@ body {
   #soap{
     width: 11vw;
     height: 15vh;
-    position: fixed;
+    position: absolute;
     bottom: 26%;
     right: 28%;
   }
@@ -368,7 +371,7 @@ body {
     position: fixed;
     width: 100px;
     height: 90px;
-    top: 13%;
+    top: 18.5%;
     left: 24.3%;
   }
 
@@ -467,4 +470,97 @@ body {
     top: 45%;
     right: 15%;
   }
+
+  #gameOver{
+    position: fixed;
+    width: 40vw;
+    height: 37vh;
+    top: 20%;
+    left: 28%;
+  }
   
+  #sunnyBestFriend1{
+    position: fixed;
+    width: 250px;
+    height: 250px;
+    right: 27%;
+    top: 30%;
+  }
+
+  #sunnyBestFriend2{
+    position: fixed;
+    width: 250px;
+    height: 250px;
+    right: 27%;
+    top: 30%;
+  }
+
+  #play-again{
+    position: fixed;
+    top: 50%;
+    left: 37%;
+    z-index: 100;
+    margin: 0px auto;
+    margin-top: 20px;
+    width: 150px;
+    padding: 20px;
+    color: #313133;
+    font-family: "DynaPuff", cursive;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    background: linear-gradient(90deg, rgb(238, 239, 162) 10%, rgb(208, 191, 231) 80%);
+    border: none;
+    border-radius: 100px;
+    box-shadow: 12px 12px 24px rgba(39, 136, 126, 0.64);
+    transition: all 0.3s ease-in-out 0s;
+  }
+
+  #play-again:hover{
+    transform: translateY(-8px);
+    cursor: pointer;
+  }
+
+  #main-menu{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 100;
+    margin: 0px auto;
+    margin-top: 20px;
+    width: 150px;
+    padding: 20px;
+    color: #313133;
+    font-family: "DynaPuff", cursive;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    background: linear-gradient(90deg, rgb(238, 239, 162) 10%, rgb(208, 191, 231) 80%);
+    border: none;
+    border-radius: 100px;
+    box-shadow: 12px 12px 24px rgba(39, 136, 126, 0.64);
+    transition: all 0.3s ease-in-out 0s;
+  }
+
+  #main-menu:hover{
+    cursor: pointer;
+    transform: translateY(-8px);
+  }
+
+  #losingImg{
+    position: fixed;
+    z-index: 10;
+    width: 1100px;
+    height: 680px;
+    top:2.85%;
+    left: 13.57%;
+  }
+
+  #deadSunny{
+    position: fixed;
+    width: 150px;
+    height: 150px;
+    top: 60%;
+    left: 50%;
+
+  }
