@@ -3,9 +3,7 @@ import * as THREE from 'three'
 import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader.js'
 // import {FBXLoader} from 'three/examples/jsm/loaders/FBXLoader.js'
 import{OrbitControls} from 'three/examples/jsm/controls/OrbitControls.js';
-import Game from "./scripts/game.js";
 import GameView from "./scripts/game_view.js";
-import playGame from "./scripts/playGame.js";
 // import enterHome from "./scripts/enter_home.js";
 
 window.addEventListener('DOMContentLoaded', () =>{
@@ -20,13 +18,11 @@ window.addEventListener('DOMContentLoaded', () =>{
     }
 
     const g = new GameView(gameOptions);
-    g.titleMenu();
+    // g.titleMenu();
 
-    const h = new Game(gameOptions);
-    h.gameDisplay();
-
-    const i = new playGame(gameOptions);
-    i.displayPlayGameImg();
+ 
+    // const i = new playGame(gameOptions);
+    // i.displayPlayGameImg();
 
   
     const HEIGHT = window.innerHeight;
@@ -114,57 +110,10 @@ window.addEventListener('DOMContentLoaded', () =>{
 
     scene.background = texture; 
 
-    // const plane = new THREE.Mesh(
-    //     new THREE.PlaneBufferGeometry(50,50),
-    //     new THREE.MeshStandardMaterial({color: 0xebe5e7,}));
-    
-    // plane.rotation.x = -Math.PI/2;
-    // plane.position.y = -100;
-    // plane.receiveShadow = true;
-    // scene.add(plane);
 
-    // const box = new THREE.Mesh(
-    //     new THREE.BoxGeometry(2,2,2),
-    //     new THREE.MeshStandardMaterial({
-    //         color: 0xFFFFFF,
-    //     }));
-
-    // box.position.set(0,1,0);
-    // box.castShadow = true;
-    // box.receiveShadow = true;
-    // scene.add(box);
 
     const mixers = [];
     const _previousRAF = null;
-
-
-
-    // function _loadAnimatedModel(){
-    //     const loader = new FBXLoader();
-    //     loader.setPath('./src/animation/');
-    //     loader.load('mixamo_testing_still.fbx',(fbx) => {
-    //         fbx.scale.setScalar(0,1);
-    //         fbx.traverse( c => {
-    //             c.castShadow = true;
-    //         });
-
-    //         const params = {
-    //             target: fbx,
-    //             camera: camera,
-    //         }
-
-    //         // const _controls = new BasicCharacterControls(params)
-    //         const animateMoving = new FBXLoader();
-    //         animateMoving.setPath('./src/animation/');
-    //         animateMoving.load('mixamo_testing_moving.fbx', (anim) => {
-    //             const m = new THREE.AnimationMixer(fbx);
-    //             mixers.push(m);
-    //             const idle = m.clipAction(anim.animations[0]);
-    //             idle.play();
-    //         });
-    //         scene.add(fbx);
-    //     });
-    // }
 
     function _loadModel(){
         const loader = new GLTFLoader();
@@ -198,59 +147,6 @@ window.addEventListener('DOMContentLoaded', () =>{
     // _loadAnimatedModel();
     _loadModel();
 
-    //*****load model****
-    
 
-    
-
-
-
-
-    
-    // const light = new THREE.DirectionalLight( 0xFFFFFF );
-    // const helper = new THREE.DirectionalLightHelper( light, 5 );
-    // scene.add( helper ); 
-
-    // renderer.setClearColor(0xA3A3A3);
-    // const orbit = new OrbitControls(camera,renderer.domElement);
-    // orbit.update();
-
-    // const grid = new THREE.GridHelper(30,30)
-    // scene.add(grid);
-
-    // camera.position.set(10,10,10); 
-    // renderer.render(scene,camera);
-
-
-    // const pointLight = new THREE.AmbientLight(0xffffff,1)
-    // pointLight.position.x = 10;
-    // pointLight.position.y = 10;
-    // pointLight.position.z = 10;
-    // scene.add(pointLight);
- 
-
-    // const gltfLoader = new GLTFLoader();
-    // //rendering sunny
-    // gltfLoader.load('./src/models/Boko_example3.glb', (gltf) => {
-    //     scene.add(gltf.scene);
-    // })
-
-    // const boxGeometry = new THREE.BoxGeometry(1,1,1)
-    // const material = new THREE.MeshBasicMaterial({color:0xFFFFFF})
-    // const mesh = new THREE.Mesh(boxGeometry,material) 
-
-    // camera.position.z = 5
-
-    // function animate(){
-    //     requestAnimationFrame(animate) 
-    //     renderer.render(scene,camera)
-    //     // mesh.rotation.x += 0.01
-    //     // mesh.rotation.y += 0.01
-    // }
-
-    // animate()
-
-
-    
     
 })

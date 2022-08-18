@@ -1,6 +1,5 @@
 // import Menu from "./menu.js";
-import Game from "./game.js";
-import playGame from "./playGame.js"
+
 import sunnyDrawImages from "./sunnyDrawImages.js"
 import sunnyStatus from "./sunnyStatus.js"
 
@@ -19,7 +18,17 @@ class GameView{
         this.dimY= params["dim"][1]; //[680]
         // this.animateBool = true;
         // this.clearScreen = false;
-    
+
+        const titleImg = new Image();
+        titleImg.src = "./src/assets/menu/sunny_title_bg.png";
+        document.body.appendChild(titleImg);
+        titleImg.setAttribute("id","titleImg");
+
+        var adventureBg = new Image();
+        adventureBg.src = "./src/assets/background/playInteractive_bg.png";
+        document.body.appendChild(adventureBg);
+        adventureBg.setAttribute("id","adventureBg");
+        adventureBg.classList.add("hidden");
 
         const playButton = document.getElementById("play-btn");
         const instructionButton = document.getElementById("instructions-btn");
@@ -30,7 +39,6 @@ class GameView{
         const hungerLevel = document.getElementById("hunger-level");
         const thirstLevel = document.getElementById("thirst-level");
         const hygieneLevel = document.getElementById("hygiene-level");
-        const statusBar = document.getElementById("health");
 
 
     
@@ -97,160 +105,106 @@ class GameView{
             switchImg = switchImg === "one" ? "two" : "one";
         }, 300);
 
+        var layout = canvas3.getContext('2d');
+        sunnyDrawImages(layout);
+        const waterImg = document.getElementById("water-img");
+        const foodImg = document.getElementById("food-img");
+        const thirstImg = document.getElementById("thirst-img");
+        const hungerImg = document.getElementById("hunger-img");
+        const hygeineImg = document.getElementById("hygiene-img");
+        const shampooImg = document.getElementById("shampoo-img");
+        const sunnyHealthBarImg1 = document.getElementById("healthbar1-img");
+        const sunnyHealthBarImg2 = document.getElementById("healthbar2-img");
+        const sunnyHealthBarImg3 = document.getElementById("healthbar3-img");
+        const sunnyHealthBarImg4 = document.getElementById("healthbar4-img");
+        const sunnyHealthBarImg5 = document.getElementById("healthbar5-img");
+        const sunnyHealthBar2Img1 = document.getElementById("healthbar2-1-img");
+        const sunnyHealthBar2Img2 = document.getElementById("healthbar2-2-img");
+        const sunnyHealthBar2Img3 = document.getElementById("healthbar2-3-img");
+        const sunnyHealthBar2Img4 = document.getElementById("healthbar2-4-img");
+        const sunnyHealthBar2Img5 = document.getElementById("healthbar2-5-img");
+        const sunnyHealthBar3Img1 = document.getElementById("healthbar3-1-img");
+        const sunnyHealthBar3Img2 = document.getElementById("healthbar3-2-img");
+        const sunnyHealthBar3Img3 = document.getElementById("healthbar3-3-img");
+        const sunnyHealthBar3Img4 = document.getElementById("healthbar3-4-img");
+        const sunnyHealthBar3Img5 = document.getElementById("healthbar3-5-img");
         
+        const sunnyHeart = document.getElementById("heartOne");
+        const sunnyHeart2 = document.getElementById("heartTwo");
+        const sunnyHeart3 = document.getElementById("heartThree");
+        const sunnyHeart4 = document.getElementById("heartFour");
+        const sunnyHeart5 = document.getElementById("heartFive");
+        const sunnyHeartEmpty1 = document.getElementById("emptyHeartOne");
+        const sunnyHeartEmpty2 = document.getElementById("emptyHeartTwo");
+        const sunnyHeartEmpty3 = document.getElementById("emptyHeartThree");
+        const sunnyHeartEmpty4 = document.getElementById("emptyHeartFour");
+        const sunnyHeartEmpty5 = document.getElementById("emptyHeartFive");
+
+
         textPlayButton.addEventListener("click",function(){
+            returnMenuButton.classList.add("hidden");
+            adventureBg.classList.remove("hidden");
+            titleImg.classList.add("hidden");
             hungerLevel.classList.remove("hidden");
             thirstLevel.classList.remove("hidden");
             hygieneLevel.classList.remove("hidden");
-
-            textPlayButton.hidden = true;
-            playButton.hidden = true;
-            instructionButton.hidden = true;
-            menuButton.hidden = false;
+            textPlayButton.classList.add("hidden")
+            playButton.classList.add("hidden")
+            instructionButton.classList.add("hidden");
+            menuButton.classList.remove("hidden");
             canvas.classList.add("hidden");
             canvas3.classList.remove("hidden");
             clearInterval(sunnyBestFriendInterval);
             sunnyBestFriend1.classList.add("hidden");
             sunnyBestFriend2.classList.add("hidden")
+            waterImg.classList.remove("hidden");
+
+            //
+             waterImg.classList.remove("hidden");
+             foodImg.classList.remove("hidden");
+             thirstImg.classList.remove("hidden");
+             hungerImg.classList.remove("hidden");
+             hygeineImg.classList.remove("hidden"); 
+             shampooImg.classList.remove("hidden");
+             sunnyHealthBarImg1.classList.remove("hidden"); 
+             sunnyHealthBarImg2.classList.remove("hidden");
+             sunnyHealthBarImg3.classList.remove("hidden"); 
+             sunnyHealthBarImg4.classList.remove("hidden"); 
+             sunnyHealthBarImg5.classList.remove("hidden"); 
+             sunnyHealthBar2Img1.classList.remove("hidden"); 
+             sunnyHealthBar2Img2.classList.remove("hidden"); 
+             sunnyHealthBar2Img3.classList.remove("hidden"); 
+             sunnyHealthBar2Img4.classList.remove("hidden"); 
+             sunnyHealthBar2Img5.classList.remove("hidden"); 
+             sunnyHealthBar3Img1.classList.remove("hidden"); 
+             sunnyHealthBar3Img2.classList.remove("hidden"); 
+             sunnyHealthBar3Img3.classList.remove("hidden"); 
+             sunnyHealthBar3Img4.classList.remove("hidden");
+             sunnyHealthBar3Img5.classList.remove("hidden"); 
+            sunnyHeart.classList.remove("hidden"); 
+            sunnyHeart2.classList.remove("hidden");  
+            sunnyHeart3.classList.remove("hidden"); 
+            sunnyHeart4.classList.remove("hidden"); 
+            sunnyHeart5.classList.remove("hidden"); 
+            sunnyHeartEmpty1.classList.remove("hidden"); 
+            sunnyHeartEmpty2.classList.remove("hidden"); 
+            sunnyHeartEmpty3.classList.remove("hidden"); 
+            sunnyHeartEmpty4.classList.remove("hidden"); 
+            sunnyHeartEmpty5.classList.remove("hidden"); 
 
             if(canvas3.getContext){
-                var layout = canvas3.getContext('2d');
-                sunnyDrawImages(layout);
+               
                 let startGame = new sunnyStatus();
 
-                // var sunnyImg = new Image();
-                // sunnyImg.src = "./src/models/sunny_1.png";
-                // //need to figure out how to use setTimeout to switch between two images
-                // //until a click is trigger, then it stops
-              
-                // var sunnyImg2 = new Image();
-                // sunnyImg2 = "./src/models/sunny_2.png"
-                // let imgToDraw = "one";
-                // if (imgToDraw === "one"){
-                //     sunnyImg.onload = function(){
-                //         layout.drawImage(sunnyImg,500,360,170,170)
-                //     }
-                //     imgToDraw = "two";
-                // }else{
-                //     sunnyImg2.onload = function(){
-                //         layout.drawImage(sunnyImg2,500,360,170,170)
-                //     }
-                //     imgToDraw = "one";
-                // }
-
-
-                // var waterImg = new Image();
-                // waterImg.src = "./src/models/sunny_water.png";
-                // // document.body.appendChild(waterImg)
-                // waterImg.style.borderRadius = "10px"
-                // waterImg.setAttribute("id", "water-img");  
-                // waterImg.onload = function(){
-                //     layout.drawImage(waterImg,215,310,100,100)
-                // }
-                // waterImg.addEventListener("click",function(){
-                //     console.log("clicked")
-                // })
-                // var FoodImg = new Image();
-                // FoodImg.src = "./src/models/sunny_food.png";
-                // FoodImg.onload = function(){
-                //     layout.drawImage(FoodImg,100,310,100,100)
-                // }
-                // var thirstImg = new Image();
-                // thirstImg.src = "./src/models/sunny_thirst1.png";
-                // thirstImg.onload = function(){
-                //     layout.drawImage(thirstImg,15,100,100,100)
-                // }
-                // var hungerImg = new Image();
-                // hungerImg.src = "./src/models/sunny_hunger1.png";
-                // hungerImg.onload = function(){
-                //     layout.drawImage(hungerImg,15,50,100,100)
-                // }
-
-                // var hygeineImg = new Image();
-                // hygeineImg.src = "./src/models/sunny_hygeine.png";
-                // hygeineImg.onload = function(){
-                //     layout.drawImage(hygeineImg,15,150,100,100)
-                // }
-
-                // var shampooImg = new Image();
-                // shampooImg.src = "./src/models/sunny_soap.png";
-                // shampooImg.onload = function(){
-                //     layout.drawImage(shampooImg,750,370,200,200)
-                // }
-                // //**because i created the image in js, how do i refer to it in css if i want to edit? */
-
-                // //need to figure out how to make heart empty
-                // // idea is to have heart empty hidden and when either
-                // //the thirst or hunger level is below a certain point,
-                // // one of the hidden heart appears and the full hearts disappears
-                // var sunnyHeart = new Image();
-                // sunnyHeart.src = "./src/models/sunnyheart_full.png";
-                // sunnyHeart.onload = function(){
-                //     layout.drawImage(sunnyHeart,1000,100,100,100)
-                // }
-                // var sunnyHeart = new Image();
-                // sunnyHeart.src = "./src/models/sunnyheart_full.png";
-                // sunnyHeart.onload = function(){
-                //     layout.drawImage(sunnyHeart,1000,160,100,100)
-                // }
-                // var sunnyHeart = new Image();
-                // sunnyHeart.src = "./src/models/sunnyheart_full.png";
-                // sunnyHeart.onload = function(){
-                //     layout.drawImage(sunnyHeart,1000,220,100,100)
-                // }
-                // var sunnyHeart = new Image();
-                // sunnyHeart.src = "./src/models/sunnyheart_full.png";
-                // sunnyHeart.onload = function(){
-                //     layout.drawImage(sunnyHeart,1000,280,100,100)
-                // }
-                // var sunnyHeart = new Image();
-                // sunnyHeart.src = "./src/models/sunnyheart_full.png";
-                // sunnyHeart.onload = function(){
-                //     layout.drawImage(sunnyHeart,1000,340,100,100)
-                // }
-                // //sunny heart empty
-
-                // var sunnyHeartEmpty = new Image();
-                // sunnyHeartEmpty.src = "./src/models/sunnyheart_empty.png";
-                // sunnyHeartEmpty.onload = function(){
-                //     layout.drawImage(sunnyHeartEmpty,1000,100,100,100)
-                // }
-
-                // var sunnyHeartEmpty = new Image();
-                // sunnyHeartEmpty.src = "./src/models/sunnyheart_empty.png";
-                // sunnyHeartEmpty.onload = function(){
-                //     layout.drawImage(sunnyHeartEmpty,1000,160,100,100)
-                // }
-
-                // var sunnyHeartEmpty = new Image();
-                // sunnyHeartEmpty.src = "./src/models/sunnyheart_empty.png";
-                // sunnyHeartEmpty.onload = function(){
-                //     layout.drawImage(sunnyHeartEmpty,1000,220,100,100)
-                // }
-
-                // var sunnyHeartEmpty = new Image();
-                // sunnyHeartEmpty.src = "./src/models/sunnyheart_empty.png";
-                // sunnyHeartEmpty.onload = function(){
-                //     layout.drawImage(sunnyHeartEmpty,1000,280,100,100)
-                // }
-
-                // var sunnyHeartEmpty = new Image();
-                // sunnyHeartEmpty.src = "./src/models/sunnyheart_empty.png";
-                // sunnyHeartEmpty.onload = function(){
-                //     layout.drawImage(sunnyHeartEmpty,1000,340,100,100)
-                // }
-
-
-
-
-                
+               
 
 
             }
-            that.playGame();
+        
         })
 
         playButton.addEventListener("click",function(){
+            returnMenuButton.classList.remove("hidden");
             textPlayButton.hidden = true;
             playButton.hidden = true;
             instructionButton.hidden = true;
@@ -258,6 +212,9 @@ class GameView{
             canvas.classList.add("hidden");
             canvas2.classList.remove("hidden");
             returnMenuButton.hidden = false;
+            clearInterval(sunnyBestFriendInterval);
+            sunnyBestFriend1.classList.add("hidden");
+            sunnyBestFriend2.classList.add("hidden")
             that.start();
 
         });
@@ -283,69 +240,9 @@ class GameView{
 
         })
 
-        // menuButton.addEventListener("click",function(){
-        //     // that.animateBool = false;
-        //     // that.clearScreen = true;
-        //     that.titleMenu();
-        //     that.clearCanvas();
-        //     setTimeout(()=> {
-        //         that.clearCanvas();
-        //     }, 1001);
-        //     menuButton.hidde = true;
-        //     playButton.hidden = false;
-        //     instructionButton.hidden = false;
-        // });
-
-        // volumeButton.addEventListener("click", function(){
-        //     //need to find autio
-        // })
     }
-    // clearCanvas() {
-    //     let canvas = document.getElementById("game-canvas"); //hold a reference to the actual html game-cavs element
-    //     this.ctx = canvas.getContext("2d"); //access to canvas 2d methods //all custom 2d canvas methods are stored in ctx
-    //     this.ctx.clearRect(0,0,this.dimX,this.dimY); 
-    // }
 
     
-
-    titleMenu(){
-        document.getElementById("game-canvas").style.backgroundImage="url(./src/assets/menu/sunny_title_bg.png)";
-    }
-
-    start(){
-        this.game = new Game(this.params)
-        // this.game = new Game(this.params);
-        // this.animateBool = true;
-        // this.toggleScreen('play-btn',false);
-        // this.toggleScreen('canvas',true);
-        // this.animate();
-    }
-
-    playGame(){
-        this.playGame = new playGame(this.params)
-    }
-
-    // animate(){
-    //     // if(!this.animateBool) {
-    //         // if (this.clearScreen) {
-    //     ctx.clearRect(0, 0, 1100, 680);
-    //         // }
-    //         // this.ctx = null; 
-    //         // return;
-    //     //   }
-    //         // requestAnimationFrame(this.animate);
-    //     console.log("enter home button working");
-    // }
-
-    // toggleScreen(id,toggle){
-    //     let element = document.getElementById(id);
-    //     let display = (toggle) ? 'block' : 'none';
-    //     element.style.display = display;
-    // }
-
-
-    
-
 }
 
 

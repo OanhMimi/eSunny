@@ -12,33 +12,57 @@ body {
     padding: 0;
     margin: auto;
     position: relative;
-    width: 1100px;
-    height: 680px;
+    width: 80vw;
+    height: 90vh;
     border: solid 15px rgb(192, 239, 208);
     border-radius: 40px;
     background-size: 100% 100%;
+  }
+
+  #titleImg{
+    position: fixed;
+    top: 3%;
+    left: 10%;
+    width: 80vw;
+    height: 90vh;
+    z-index: -5;
   }
   
   .another-canvas-container {
     padding: 0;
     margin: auto;
     position: relative;
-    width: 1100px;
-    height: 680px;
+    width:  80vw;
+    height: 90vh;
     border: solid 15px rgb(192, 239, 208);
     border-radius: 40px;
     background-size: 100% 100%;
   }
-  
-  .game-canvas {
-    display: block;
-    position: absolute;
+
+  #adventureBg{
+    position: fixed;
+    top: 3%;
+    left: 10%;
+    width: 80vw;
+    height: 90vh;
+    z-index: -5;
   }
-  
+
+  #losingImg{
+    position: fixed;
+    top: 3%;
+    left: 10%;
+    width: 80vw;
+    height: 90vh;
+    z-index: -5;
+  }
+
   .menu-button {
     position: absolute;
-    right: 15%;
-    top: 55%;
+    right: 20%;
+    top: 65%;
+    width: 7vw;
+    height: 10vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -49,8 +73,8 @@ body {
     cursor: pointer;
     margin: 0px auto;
     margin-top: 20px;
-    width: 150px;
-    padding: 20px;
+    width: 12vw;
+    padding: 10px;
     color: #313133;
     font-family: "DynaPuff", cursive;
     border-radius: 10px;
@@ -70,29 +94,44 @@ body {
   }
   
   #instructions-text {
-    position: absolute;
+    position: fixed;
     right: 13%;
     top: 50%;
-    color: #d9d9d9;
+    color: #aa60c0;
     margin: 0 auto;
-    width: 200px;
-    height: 240px;
+    width: 20vw;
+    height: 25vh;
     border-radius: 80px;
+  }
+
+  #instructions-text h2{
+    position: fixed;
+    font-family: "DynaPuff", cursive;
+    font-size: 2.7vh;
+    width: inherit;
+    height: inherit;
+    left: 59.5%;
+    bottom: 10%;
+    text-shadow: 2cm #050519;
   }
   
 
   #instructions-text img {
-    height: 100%;
-    width: 100%;
+    position: fixed;
+    right: 1%;
+    bottom: 5%;
+    height: 55vh;
+    width: 60vw;
     object-fit: contain;
+
   }
   
   #return-to-menu {
     cursor: pointer;
     position: absolute;
     z-index: 1001;
-    right: 15%;
-    bottom: 5%;
+    right: 19%;
+    bottom: 4%;
     width: 100px;
     font-family: "DynaPuff", cursive;
     margin: 0px auto;
@@ -155,8 +194,8 @@ body {
   }
 
   #water-img{
-    width: 100px;
-    height: 100px;
+    width: 7vw;
+    height: 14vh;
     position: fixed;
     top: 43%;
     left: 27%;
@@ -167,16 +206,16 @@ body {
   }
 
   #water{
-    width: 100px;
-    height: 100px;
+    width: 7vw;
+    height: 14vh;
     position: fixed;
-    top: 40%;
+    top: 34%;
     left: 27%;
   }
 
   #food-img{
-    width: 100px;
-    height: 100px;
+    width: 7vw;
+    height: 14vh;
     position: fixed;
     top: 43%;
     left: 20%;
@@ -188,40 +227,40 @@ body {
   }
 
   #food{
-    width: 100px;
-    height: 100px;
+    width: 7vw;
+    height: 14vh;
     position: fixed;
-    top: 40%;
+    top: 34%;
     left: 20%;
   }
 
   #thirst-img{
-    width: 70px;
-    height: 70px;
+    width: 8vw;
+    height: 13vh;
     position: fixed;
     top: 15%;
-    left: 20.5%;
+    left: 19%;
   }
 
   #hunger-img{
-    width: 70px;
-    height: 70px;
+    width: 8vw;
+    height: 13vh;
     position: fixed;
-    top: 9.7%;
-    left: 20.5%;
+    top: 8%;
+    left: 19%;
   }
 
   #hygiene-img{
-    width: 70px;
-    height: 70px;
+    width: 8vw;
+    height: 13vh;
     position: fixed;
-    top: 20%;
-    left: 20.5%;
+    top: 22%;
+    left: 19%;
   }
 
   #shampoo-img{
-    width: 180px;
-    height: 180px;
+    width: 13vw;
+    height: 24vh;
     position: fixed;
     bottom: 20%;
     right: 25%;
@@ -237,156 +276,167 @@ body {
     height: 15vh;
     position: absolute;
     bottom: 26%;
-    right: 28%;
+    right: 30%;
   }
 
 
   .sunny-status{
     font-family: "DynaPuff", cursive;    
-    font-size: 14px;
+    font-size: 2.5vh;
     color: aquamarine;
     -webkit-text-stroke: .7px rgb(0, 0, 0);
     position: fixed; //uses pixel or percent
-    top: 10%;
-    left: 14%;
+    top: 9%;
+    left: 11.5%;
     z-index: 1;
     line-height: 2;
   }
 
   #healthbar1-img{
     position: fixed;
-    width: 100px;
-    height: 90px;
-    top: 7.5%;
-    left: 24.3%;
+    width: 10vw;
+    height: 15vh;
+    top: 7%;
+    left: 25%;
+    z-index: -5;
   }
 
   #healthbar2-img{
     position: fixed;
-    width: 100px;
-    height: 90px;
-    top: 7.5%;
-    left: 24.3%;
+    width: 10vw;
+    height: 15vh;
+    top: 7%;
+    left: 25%;
+    z-index: -4;
   }
 
   #healthbar3-img{
     position: fixed;
-    width: 100px;
-    height: 90px;
-    top: 7.5%;
-    left: 24.3%;
+    width: 10vw;
+    height: 15vh;
+    top: 7%;
+    left: 25%;
+    z-index: -3;
   }
 
   #healthbar4-img{
     position: fixed;
-    width: 100px;
-    height: 90px;
-    top: 7.5%;
-    left: 24.3%;
+    width: 10vw;
+    height: 15vh;
+    top: 7%;
+    left: 25%;
+    z-index: -2;
   }
 
   #healthbar5-img{
     position: fixed;
-    width: 100px;
-    height: 90px;
-    top: 7.5%;
-    left: 24.3%;
+    width: 10vw;
+    height: 15vh;
+    top: 7%;
+    left: 25%;
+    z-index: -1;
   }
 
 
   #healthbar2-1-img{
     position: fixed;
-    width: 100px;
-    height: 90px;
+    width: 10vw;
+    height: 15vh;
     top: 13%;
-    left: 24.3%;
+    left: 25%;
+    z-index: -5
   }
 
   #healthbar2-2-img{
     position: fixed;
-    width: 100px;
-    height: 90px;
+    width: 10vw;
+    height: 15vh;
     top: 13%;
-    left: 24.3%;
+    left: 25%;
+    z-index: -4
   }
 
   #healthbar2-3-img{
     position: fixed;
-    width: 100px;
-    height: 90px;
+    width: 10vw;
+    height: 15vh;
     top: 13%;
-    left: 24.3%;
+    left: 25%;
+    z-index: -3
+
   }
 
   #healthbar2-4-img{
     position: fixed;
-    width: 100px;
-    height: 90px;
+    width: 10vw;
+    height: 15vh;
     top: 13%;
-    left: 24.3%;
+    left: 25%;
+    z-index: -2;
   }
 
   #healthbar2-5-img{
     position: fixed;
-    width: 100px;
-    height: 90px;
+    width: 10vw;
+    height: 15vh;
     top: 13%;
-    left: 24.3%;
+    left: 25%;
+    z-index: -1
   }
 
 
   #healthbar3-1-img{
     position: fixed;
-    width: 100px;
-    height: 90px;
-    top: 18.5%;
-    left: 24.3%;
+    width: 10vw;
+    height: 15vh;
+    top: 20%;
+    left: 25%;
   }
 
   #healthbar3-2-img{
     position: fixed;
-    width: 100px;
-    height: 90px;
-    top: 18.5%;
-    left: 24.3%;
+    width: 10vw;
+    height: 15vh;
+    top: 20%;
+    left: 25%;
   }
 
   #healthbar3-3-img{
     position: fixed;
-    width: 100px;
-    height: 90px;
-    top: 18.5%;
-    left: 24.3%;
+    width: 10vw;
+    height: 15vh;
+    top: 20%;
+    left: 25%;
   }
 
   #healthbar3-4-img{
     position: fixed;
-    width: 100px;
-    height: 90px;
-    top: 18.5%;
-    left: 24.3%;
+    width: 10vw;
+    height: 15vh;
+    top: 20%;
+    left: 25%;
   }
 
   #healthbar3-5-img{
     position: fixed;
-    width: 100px;
-    height: 90px;
-    top: 18.5%;
-    left: 24.3%;
+    width: 10vw;
+    height: 15vh;
+    top: 20%;
+    left: 25%;
   }
 
   #sunnyImg1{
     position: fixed;
-    width: 180px;
-    height: 180px;
+    width: 12vw;
+    height: 25vh;
     top: 50%;
     left: 50%;
   }
 
   #sunnyImg2{
     position: fixed;
-    width: 180px;
-    height: 180px;
+    width: 12vw;
+    height: 25vh;
     top: 50%;
     left: 50%;
   }
@@ -473,31 +523,32 @@ body {
 
   #gameOver{
     position: fixed;
-    width: 40vw;
-    height: 37vh;
-    top: 20%;
-    left: 28%;
+    z-index: 1000;
+    width: 29vw;
+    height: 49vh;
+    top: 13%;
+    left: 35%;
   }
   
   #sunnyBestFriend1{
     position: fixed;
-    width: 250px;
-    height: 250px;
+    width: 18vw;
+    height: 30vh;
     right: 27%;
-    top: 30%;
+    top: 33%;
   }
 
   #sunnyBestFriend2{
     position: fixed;
-    width: 250px;
-    height: 250px;
+    width: 18vw;
+    height: 30vh;
     right: 27%;
-    top: 30%;
+    top: 33%;
   }
 
   #play-again{
     position: fixed;
-    top: 50%;
+    top: 59%;
     left: 37%;
     z-index: 100;
     margin: 0px auto;
@@ -509,7 +560,7 @@ body {
     border-radius: 10px;
     text-transform: uppercase;
     letter-spacing: 1.3px;
-    background: linear-gradient(90deg, rgb(238, 239, 162) 10%, rgb(208, 191, 231) 80%);
+    background: linear-gradient(90deg, rgb(226, 226, 128) 10%, rgb(196, 147, 255) 80%);
     border: none;
     border-radius: 100px;
     box-shadow: 12px 12px 24px rgba(39, 136, 126, 0.64);
@@ -524,7 +575,7 @@ body {
   #main-menu{
     position: fixed;
     top: 50%;
-    left: 50%;
+    right: 20%;
     z-index: 100;
     margin: 0px auto;
     margin-top: 20px;
@@ -535,7 +586,7 @@ body {
     border-radius: 10px;
     text-transform: uppercase;
     letter-spacing: 1.3px;
-    background: linear-gradient(90deg, rgb(238, 239, 162) 10%, rgb(208, 191, 231) 80%);
+    background: linear-gradient(90deg, rgb(199, 255, 250) 10%, rgb(123, 252, 153) 80%);
     border: none;
     border-radius: 100px;
     box-shadow: 12px 12px 24px rgba(39, 136, 126, 0.64);
@@ -547,20 +598,27 @@ body {
     transform: translateY(-8px);
   }
 
-  #losingImg{
-    position: fixed;
-    z-index: 10;
-    width: 1100px;
-    height: 680px;
-    top:2.85%;
-    left: 13.57%;
-  }
+  
 
   #deadSunny{
     position: fixed;
-    width: 150px;
-    height: 150px;
-    top: 60%;
-    left: 50%;
+    z-index: 1000;
+    width: 19vw;
+    height: 40vh;
+    top: 50%;
+    left: 38%;
 
   }
+
+  #sunnyCry{
+    position: fixed;
+    width: 13vw;
+    height: 28vh;
+    top: 50%;
+    left: 50%;
+    z-index: 200;
+  }
+
+
+
+ 
