@@ -19,6 +19,15 @@ body {
     background-size: 100% 100%;
   }
 
+  #housecanvas{
+    position: fixed;
+    top: 2%;
+    left: 10%;
+    width: 80vw;
+    height: 92vh;
+    z-index: -5;
+  }
+
   #titleImg{
     position: fixed;
     top: 2%;
