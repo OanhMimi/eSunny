@@ -225,7 +225,7 @@ class GameView{
             playButton.hidden = true;
             instructionButton.hidden = true;
             instructionBox.hidden = false;
-            returnMenuButton.hidden = false;
+            returnMenuButton.classList.remove("hidden");
             canvas.classList.remove("hidden")
         })
 
@@ -234,7 +234,7 @@ class GameView{
             playButton.hidden = false;
             instructionButton.hidden = false;
             instructionBox.hidden = true;
-            returnMenuButton.hidden = true; 
+            returnMenuButton.classList.add("hidden");
             canvas.classList.remove("hidden");
             canvas2.classList.add("hidden");
 

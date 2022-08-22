@@ -438,30 +438,6 @@ class SunnyStatus {
       document.querySelector("#soap").classList.add("hidden");
       document.querySelector("#main-menu").classList.add("hidden");
 
-      
-
-      // this.sunnyHearts.fullHeart1.classList.remove("hidden");
-      // this.sunnyHearts.fullHeart2.classList.remove("hidden");
-      // this.sunnyHearts.fullHeart3.classList.remove("hidden");
-      // this.sunnyHearts.fullHeart4.classList.remove("hidden");
-      // this.sunnyHearts.fullHeart5.classList.remove("hidden");
-      // this.sunnyHearts.emptyHeart1.classList.remove("hidden");
-      // this.sunnyHearts.emptyHeart2.classList.remove("hidden");
-      // this.sunnyHearts.emptyHeart3.classList.remove("hidden");
-      // this.sunnyHearts.emptyHeart4.classList.remove("hidden");
-      // this.sunnyHearts.emptyHeart5.classList.remove("hidden");
-      // this.sunnyElements.healthOne1.classList.remove("hidden");
-      // this.sunnyElements.healthOne2.classList.remove("hidden");
-      // this.sunnyElements.healthOne3.classList.remove("hidden");
-      // this.sunnyElements.healthOne4.classList.remove("hidden");
-      // this.sunnyElements.healthTwo1.classList.remove("hidden");
-      // this.sunnyElements.healthTwo2.classList.remove("hidden");
-      // this.sunnyElements.healthTwo3.classList.remove("hidden");
-      // this.sunnyElements.healthTwo4.classList.remove("hidden");
-      // this.sunnyElements.healthThree1.classList.remove("hidden");
-      // this.sunnyElements.healthThree2.classList.remove("hidden");
-      // this.sunnyElements.healthThree3.classList.remove("hidden");
-      // this.sunnyElements.healthThree4.classList.remove("hidden");
 
       clearInterval(this.mainSunny);
       //   sunnyImg1.remove();
@@ -473,11 +449,3 @@ class SunnyStatus {
 
 export default SunnyStatus;
 
-//getting my window width and height to work ***
-//fix padding/drag animation **
-//sunny animation (sad, happy) *
-//play again & main menu
-//add sound effects
-//make stuff bigger
-//instructions
-//if i clear it, how do i add the interval again?
