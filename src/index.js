@@ -31,7 +31,7 @@ window.addEventListener('DOMContentLoaded', () =>{
     const renderer = new THREE.WebGLRenderer({canvas: housecanvas, alpha: true, antialias: true}); //three.js uses renderer to allocate a space on a webpage where we can add/animate all 3d stuff
     renderer.shadowMap.enabled = true; 
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-    renderer.setSize(1100, 680) //set the size of our window 
+    renderer.setSize("80vw", "92vh") //set the size of our window 
     renderer.setPixelRatio(window.devicePixelRatio);
     const selectContainer = document.querySelector(".canvas-container");
     selectContainer.appendChild(renderer.domElement); //important
