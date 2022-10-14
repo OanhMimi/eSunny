@@ -33,7 +33,6 @@ class GameView{
         const thirstLevel = document.getElementById("thirst-level");
         const hygieneLevel = document.getElementById("hygiene-level");
 
-        const that = this;
         const instructionBox = document.getElementById("instructions-text");
 
         const backgroundMusic = new Audio();
@@ -141,12 +140,12 @@ class GameView{
             canvas3.classList.remove("hidden");
             clearInterval(sunnyBestFriendInterval);
             clearInterval(mainPageSunnyInterval);
+            
             sunnyBestFriend1.classList.add("hidden");
             sunnyBestFriend2.classList.add("hidden")
             mainPageSunny1.classList.add("hidden");
             mainPageSunny2.classList.add("hidden");
             waterImg.classList.remove("hidden");
-
             //
              waterImg.classList.remove("hidden");
              foodImg.classList.remove("hidden");

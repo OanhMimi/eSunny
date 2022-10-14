@@ -1,4 +1,5 @@
 
+import { cloneUniformsGroups } from "three";
 import GameView from "./game_view";
 
 class SunnyStatus {
@@ -301,14 +302,14 @@ class SunnyStatus {
     this.hungerInterval = setInterval(() => {
       this.hunger -= 1;
       this.decrementFoodHealthBar();
-    }, 3500);
+    }, 4500);
   }
 
   startThirstInterval() {
     this.thirstInterval = setInterval(() => {
       this.thirst -= 1;
       this.decrementWaterHealthBar();
-    }, 2000);
+    }, 4000);
   }
 
   startCleanlinessInterval() {
@@ -389,48 +390,20 @@ class SunnyStatus {
      
           this.canvas.classList.remove("hidden");
           this.canvas3.classList.add("hidden");
-          // document.querySelector("#titleImg").classList.remove("hidden");
           document.querySelector("#adventureBg").classList.add("hidden");
           document.querySelector("#instructions-btn").classList.remove("hidden");
           document.querySelector("#textplay-btn").classList.remove("hidden");
 
-
           this.playAgain.classList.add("hidden");
 
-          // this.sunnyHearts.fullHeart1.classList.add("hidden");
-          // this.sunnyHearts.fullHeart2.classList.add("hidden");
-          // this.sunnyHearts.fullHeart3.classList.add("hidden");
-          // this.sunnyHearts.fullHeart4.classList.add("hidden");
-          // this.sunnyHearts.fullHeart5.classList.add("hidden");
-          // this.sunnyHearts.emptyHeart1.classList.add("hidden");
-          // this.sunnyHearts.emptyHeart2.classList.add("hidden");
-          // this.sunnyHearts.emptyHeart3.classList.add("hidden");
-          // this.sunnyHearts.emptyHeart4.classList.add("hidden");
-          // this.sunnyHearts.emptyHeart5.classList.add("hidden");
-          // this.sunnyElements.healthOne1.classList.add("hidden");
-          // this.sunnyElements.healthOne2.classList.add("hidden");
-          // this.sunnyElements.healthOne3.classList.add("hidden");
-          // this.sunnyElements.healthOne4.classList.add("hidden");
-          // this.sunnyElements.healthOne5.classList.add("hidden");
-          // this.sunnyElements.healthTwo1.classList.add("hidden");
-          // this.sunnyElements.healthTwo2.classList.add("hidden");
-          // this.sunnyElements.healthTwo3.classList.add("hidden");
-          // this.sunnyElements.healthTwo4.classList.add("hidden");
-          // this.sunnyElements.healthTwo5.classList.add("hidden");
-          // this.sunnyElements.healthThree1.classList.add("hidden");
-          // this.sunnyElements.healthThree2.classList.add("hidden");
-          // this.sunnyElements.healthThree3.classList.add("hidden");
-          // this.sunnyElements.healthThree4.classList.add("hidden");
-          // this.sunnyElements.healthThree5.classList.add("hidden");
-    
           clearInterval(this.mainSunny);
-    
-          // document.querySelector("#mainPageSunny1").classList.remove("hidden")
-          // document.querySelector("#mainPageSunny1").classList.remove("hidden")
-       
+          clearInterval(this.cleanlinessInterval);
+          clearInterval(this.hungerInterval);
+          clearInterval(this.thirstInterval);
+
           const gameOptions = {
             dim: [1100,680]
-        }
+           }
           let returnMenu = new GameView(gameOptions);
 
 
