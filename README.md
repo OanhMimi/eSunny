@@ -1,16 +1,16 @@
 # E-Sunny 
 
+Live Link: https://oanhmimi.github.io/eSunny/
+
 ### Background/intro:
 
-- E-Sunny is an interactive platforming game, where the player can get to experience the joy of owning a virtual dog. The player will get to interact with the puppy and watch it grow through the process of feeding it, giving it love, etc. 
+- E-Sunny is a single page, interactive JavaScript game designed to showcase the responsibilities of owning a pet that is suitable for all ages. The player will get to interact with Sunny, the puppy, by giving him food, water, and baths. There is a time that decrease his hunger, thirst, and cleanliness level over time. If not fed continuously, Sunny will unfortunately collapse. 
 
 ### Functionality & MVP:
 In E-Sunny, players will be able to:
-- give the puppy a name & choose the puppy's color
-- rotate the camera around the puppy 
-- use the mouse to interact with the puppy 
-- view the dog's mood status
-- select from a list of actions (give food, water, walks, etc)
+- Link to Github, LinkedIn
+- select from a list of actions (give food, water, baths)
+
 
 ### features: 
 - virtual animation of the puppy and the life stages as it go from puppy stage to adulthood
@@ -38,20 +38,4 @@ In E-Sunny, players will be able to:
 - anime.js (ceating hair movements and directional movements)
 - game.js && game_view.js (providing animation details)
 
-### Timeline: 
-- Friday/Weekend
-    - rendering background and puppy on screen
-    - create splash page image 
-    - social links
-    - background music
-- Monday
-    - rendering the health/accessories/on screen
-    - hover instructions
-    - create sprite images of Sunny and backgrounds
-- Tuesday
-    - hover/click effects and healthbars
-    - interactive elements like clicking food/water/shampoo
-- Wednesday
-    - fixing the game logic and debug
-- Thursday Morning 
-    - final edits/changes
+
