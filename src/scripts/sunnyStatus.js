@@ -1,3 +1,6 @@
+
+import GameView from "./game_view";
+
 class SunnyStatus {
   constructor() {
     var sunnyImg1 = new Image();
@@ -60,8 +63,6 @@ class SunnyStatus {
       bodysoap: document.getElementById("shampoo-img"),
     };
 
-   
-
     this.waterImg = document.getElementById("water-img");
     this.foodImg = document.getElementById("food-img");
     this.thirstImg = document.getElementById("thirst-img");
@@ -84,8 +85,7 @@ class SunnyStatus {
     this.cleanliness = 4;
     this.heart = 5;
 
-    this.textPlayButton = document.getElementById("textplay-btn");
-    console.log(this.textPlayButton);
+    this.text = document.getElementById("textplay-btn");
 
     this.startHungerInterval();
     this.startThirstInterval();
@@ -225,11 +225,11 @@ class SunnyStatus {
     if (this.heart === 3) {
       this.sunnyHearts.fullHeart3.classList.remove("hidden");
       let cryImg = new Image();
-      cryImg.src = "./src/models/sunny_crying.png"
+      cryImg.src = "./src/models/sunny_crying.png";
       document.body.appendChild(cryImg);
-      cryImg.setAttribute("id","sunnyCry")
+      cryImg.setAttribute("id", "sunnyCry");
       setTimeout(() => {
-        cryImg.remove()
+        cryImg.remove();
       }, 2000);
     }
     if (this.heart === 2) {
@@ -324,6 +324,8 @@ class SunnyStatus {
     document.body.appendChild(gameOverImg);
     gameOverImg.setAttribute("id", "gameOver");
     this.mainMenu.classList.remove("hidden");
+    this.playAgain.classList.remove("hidden");
+
     let losingImg = new Image();
     losingImg.src = "./src/assets/background/losing_bg_img.png";
     document.body.appendChild(losingImg);
@@ -335,6 +337,7 @@ class SunnyStatus {
     document.querySelector("#water").classList.add("hidden");
     document.querySelector("#food").classList.add("hidden");
     document.querySelector("#soap").classList.add("hidden");
+
 
     this.sunnyHearts.fullHeart1.classList.add("hidden");
     this.sunnyHearts.fullHeart2.classList.add("hidden");
@@ -374,57 +377,63 @@ class SunnyStatus {
     document.querySelector("#sunnyImg1").remove();
     document.querySelector("#sunnyImg2").remove();
 
+
     this.mainMenu.addEventListener("click", () => {
-      document.querySelector("#water").classList.add("hidden");
-      document.querySelector("#food").classList.add("hidden");
-      document.querySelector("#soap").classList.add("hidden");
-      this.textPlayButton.innerText = "Play";
-      this.mainMenu.classList.add("hidden")
-      gameOverImg.remove();
-      losingImg.remove();
-      deadSunnyImg.remove();
-      this.canvas.classList.remove("hidden");
-      document.querySelector("#titleImg").classList.remove("hidden");
-      document.querySelector("#adventureBg").classList.add("hidden");
-      document.querySelector("#instructions-btn").classList.remove("hidden");
-      document.querySelector("#play-btn").classList.remove("hidden");
+          document.querySelector("#water").classList.add("hidden");
+          document.querySelector("#food").classList.add("hidden");
+          document.querySelector("#soap").classList.add("hidden");
+          this.mainMenu.classList.add("hidden");
+          gameOverImg.remove();
+          losingImg.remove();
+          deadSunnyImg.remove();
+     
+          this.canvas.classList.remove("hidden");
+          this.canvas3.classList.add("hidden");
+          // document.querySelector("#titleImg").classList.remove("hidden");
+          document.querySelector("#adventureBg").classList.add("hidden");
+          document.querySelector("#instructions-btn").classList.remove("hidden");
+          document.querySelector("#textplay-btn").classList.remove("hidden");
 
-      this.canvas3.classList.add("hidden");
-      this.playAgain.classList.add("hidden");
-      this.mainMenu.classList.add("hidden");
-      document.querySelector("#adventureBg").classList.add("hidden");
-      this.sunnyHearts.fullHeart1.classList.add("hidden");
-      this.sunnyHearts.fullHeart2.classList.add("hidden");
-      this.sunnyHearts.fullHeart3.classList.add("hidden");
-      this.sunnyHearts.fullHeart4.classList.add("hidden");
-      this.sunnyHearts.fullHeart5.classList.add("hidden");
-      this.sunnyHearts.emptyHeart1.classList.add("hidden");
-      this.sunnyHearts.emptyHeart2.classList.add("hidden");
-      this.sunnyHearts.emptyHeart3.classList.add("hidden");
-      this.sunnyHearts.emptyHeart4.classList.add("hidden");
-      this.sunnyHearts.emptyHeart5.classList.add("hidden");
-      this.sunnyElements.healthOne1.classList.add("hidden");
-      this.sunnyElements.healthOne2.classList.add("hidden");
-      this.sunnyElements.healthOne3.classList.add("hidden");
-      this.sunnyElements.healthOne4.classList.add("hidden");
-      this.sunnyElements.healthOne5.classList.add("hidden");
-      this.sunnyElements.healthTwo1.classList.add("hidden");
-      this.sunnyElements.healthTwo2.classList.add("hidden");
-      this.sunnyElements.healthTwo3.classList.add("hidden");
-      this.sunnyElements.healthTwo4.classList.add("hidden");
-      this.sunnyElements.healthTwo5.classList.add("hidden");
-      this.sunnyElements.healthThree1.classList.add("hidden");
-      this.sunnyElements.healthThree2.classList.add("hidden");
-      this.sunnyElements.healthThree3.classList.add("hidden");
-      this.sunnyElements.healthThree4.classList.add("hidden");
-      this.sunnyElements.healthThree5.classList.add("hidden");
 
-      clearInterval(this.mainSunny);
-      // sunnyImg1.remove();
-      // sunnyImg2.remove();
-      this.textPlayButton.classList.remove("hidden");
+          this.playAgain.classList.add("hidden");
 
-      //all my images are in drawImages file, how do i call it here without making new ids and  hiding it..?
+          // this.sunnyHearts.fullHeart1.classList.add("hidden");
+          // this.sunnyHearts.fullHeart2.classList.add("hidden");
+          // this.sunnyHearts.fullHeart3.classList.add("hidden");
+          // this.sunnyHearts.fullHeart4.classList.add("hidden");
+          // this.sunnyHearts.fullHeart5.classList.add("hidden");
+          // this.sunnyHearts.emptyHeart1.classList.add("hidden");
+          // this.sunnyHearts.emptyHeart2.classList.add("hidden");
+          // this.sunnyHearts.emptyHeart3.classList.add("hidden");
+          // this.sunnyHearts.emptyHeart4.classList.add("hidden");
+          // this.sunnyHearts.emptyHeart5.classList.add("hidden");
+          // this.sunnyElements.healthOne1.classList.add("hidden");
+          // this.sunnyElements.healthOne2.classList.add("hidden");
+          // this.sunnyElements.healthOne3.classList.add("hidden");
+          // this.sunnyElements.healthOne4.classList.add("hidden");
+          // this.sunnyElements.healthOne5.classList.add("hidden");
+          // this.sunnyElements.healthTwo1.classList.add("hidden");
+          // this.sunnyElements.healthTwo2.classList.add("hidden");
+          // this.sunnyElements.healthTwo3.classList.add("hidden");
+          // this.sunnyElements.healthTwo4.classList.add("hidden");
+          // this.sunnyElements.healthTwo5.classList.add("hidden");
+          // this.sunnyElements.healthThree1.classList.add("hidden");
+          // this.sunnyElements.healthThree2.classList.add("hidden");
+          // this.sunnyElements.healthThree3.classList.add("hidden");
+          // this.sunnyElements.healthThree4.classList.add("hidden");
+          // this.sunnyElements.healthThree5.classList.add("hidden");
+    
+          clearInterval(this.mainSunny);
+    
+          // document.querySelector("#mainPageSunny1").classList.remove("hidden")
+          // document.querySelector("#mainPageSunny1").classList.remove("hidden")
+       
+          const gameOptions = {
+            dim: [1100,680]
+        }
+          let returnMenu = new GameView(gameOptions);
+
+
     });
 
     this.textPlayButton.classList.remove("hidden");
@@ -438,7 +447,6 @@ class SunnyStatus {
       document.querySelector("#soap").classList.add("hidden");
       document.querySelector("#main-menu").classList.add("hidden");
 
-
       clearInterval(this.mainSunny);
       //   sunnyImg1.remove();
       //   sunnyImg2.remove();
@@ -448,4 +456,3 @@ class SunnyStatus {
 }
 
 export default SunnyStatus;
-

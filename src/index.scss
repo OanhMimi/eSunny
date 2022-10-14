@@ -19,14 +19,14 @@ body {
     background-size: 100% 100%;
   }
 
-  #housecanvas{
-    position: fixed;
-    top: 2%;
-    left: 10%;
-    width: 80vw;
-    height: 92vh;
-    z-index: -5;
-  }
+  // #housecanvas{
+  //   position: fixed;
+  //   top: 2%;
+  //   left: 10%;
+  //   width: 80vw;
+  //   height: 92vh;
+  //   z-index: -5;
+  // }
 
   #titleImg{
     position: fixed;
@@ -553,6 +553,22 @@ body {
     height: 30vh;
     right: 27%;
     top: 33%;
+  }
+
+  #mainPageSunny1{
+    position: fixed;
+    width: 10vw;
+    height: 19vh;
+    left: 27.3%;
+    top: 52%;
+  }
+
+  #mainPageSunny2{
+    position: fixed;
+    width: 10vw;
+    height: 19vh;
+    left: 27.3%;
+    top: 52%;
   }
 
   #play-again{

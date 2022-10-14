@@ -1,58 +1,40 @@
 function drawImages(layout){
                 
-               
-                
                 var waterImg = new Image();
                 waterImg.src = "./src/models/sunny_water.png";
                 document.body.appendChild(waterImg)
                 waterImg.setAttribute("id", "water-img");
                 waterImg.classList.add("hidden");
-                // waterImg.onload = function(){
-                //     layout.drawImage(waterImg,215,310,100,100)
-                // }
-               
+  
                 var foodImg = new Image();
                 foodImg.src = "./src/models/sunny_food.png";
                 document.body.appendChild(foodImg);
                 foodImg.setAttribute("id", "food-img");  
                 foodImg.classList.add("hidden");
 
-                // FoodImg.onload = function(){
-                //     layout.drawImage(FoodImg,100,310,100,100)
-                // }
                 var thirstImg = new Image();
                 thirstImg.src = "./src/models/sunny_thirst1.png";
                 document.body.appendChild(thirstImg);
                 thirstImg.setAttribute("id", "thirst-img");
                 thirstImg.classList.add("hidden");
-                // thirstImg.onload = function(){
-                //     layout.drawImage(thirstImg,15,100,100,100)
-                // }
 
                 var hungerImg = new Image();
                 hungerImg.src = "./src/models/sunny_hunger1.png";
                 document.body.appendChild(hungerImg);
                 hungerImg.setAttribute("id","hunger-img")
                 hungerImg.classList.add("hidden");
-                // hungerImg.onload = function(){
-                //     layout.drawImage(hungerImg,15,50,100,100)
-                // }
 
                 var hygieneImg = new Image();
                 hygieneImg.src = "./src/models/sunny_hygeine.png";
                 document.body.appendChild(hygieneImg);
                 hygieneImg.setAttribute("id","hygiene-img");
                 hygieneImg.classList.add("hidden")
-                // hygeineImg.onload = function(){
-                //     layout.drawImage(hygeineImg,15,150,100,100)
-                // }
 
                 var shampooImg = new Image();
                 shampooImg.src = "./src/models/sunny_soap.png";
                 document.body.appendChild(shampooImg);
                 shampooImg.setAttribute("id","shampoo-img")
                 shampooImg.classList.add("hidden");
-
 
 
                 //putting one health bar behind the other
@@ -146,13 +128,6 @@ function drawImages(layout){
                                 sunnyHealthBar3Img5.setAttribute("id","healthbar3-5-img");
                                 sunnyHealthBar3Img5.classList.add("hidden");
 
-
-                //**because i created the image in js, how do i refer to it in css if i want to edit? */
-
-                //need to figure out how to make heart empty
-                // idea is to have heart empty hidden and when either
-                //the thirst or hunger level is below a certain point,
-                // one of the hidden heart appears and the full hearts disappears
                 var sunnyHeart = new Image();
                 sunnyHeart.src = "./src/models/sunnyheart_full.png";
                 document.body.appendChild(sunnyHeart);
@@ -244,11 +219,7 @@ function drawImages(layout){
                 })
 
 
-
-
 }
 
 export default drawImages;
 
-//how do i make my images moves according to screen size?
-//how do i go about starting setting intervals for health bar

@@ -544,6 +544,22 @@ body {
   top: 33%;
 }
 
+#mainPageSunny1 {
+  position: fixed;
+  width: 10vw;
+  height: 19vh;
+  left: 27.3%;
+  top: 52%;
+}
+
+#mainPageSunny2 {
+  position: fixed;
+  width: 10vw;
+  height: 19vh;
+  left: 27.3%;
+  top: 52%;
+}
+
 #play-again {
   position: fixed;
   top: 59%;
