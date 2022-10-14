@@ -209,12 +209,3 @@ class GameView{
 
 
 export default GameView;
-
-
-//1. my images are always underneath my canvas, how to fix that
-//2. set intervals? 
-//    - how to flash the sunny image
-//    - how to get the heart disappears and reappears
-//3. neater code? how can i use other classes
-//4. how do i get the menu button to return to menu?
-//5. make it draggable
