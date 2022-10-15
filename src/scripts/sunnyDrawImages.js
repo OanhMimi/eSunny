@@ -198,6 +198,9 @@ function drawImages(layout){
                 water.setAttribute("id","water");
                 waterImg.addEventListener("click", function(){
                     water.classList.remove("hidden")
+                    setTimeout(() => {
+                        water.classList.add("hidden");
+                      }, 300); 
                 })
 
                 var food = new Image();
@@ -207,6 +210,9 @@ function drawImages(layout){
                 food.setAttribute("id","food");
                 foodImg.addEventListener("click", function(){
                     food.classList.remove("hidden") 
+                    setTimeout(() => {
+                        food.classList.add("hidden");
+                      }, 300); 
                 })
 
                 var soap = new Image();
@@ -215,7 +221,10 @@ function drawImages(layout){
                 soap.classList.add("hidden");
                 soap.setAttribute("id","soap");
                 shampooImg.addEventListener("click", function(){
-                    soap.classList.remove("hidden") 
+                    soap.classList.remove("hidden")
+                    setTimeout(() => {
+                        soap.classList.add("hidden");
+                      }, 300); 
                 })
 
 

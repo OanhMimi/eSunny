@@ -4,7 +4,6 @@ import sunnyStatus from "./sunnyStatus.js"
 
 class GameView{
     constructor(params){ //[1100,680]
-        
         const canvas = document.getElementById("game-canvas"); //splash canvas
         const canvas3 = document.getElementById("adventureCanvas"); //play canvas
         const ctx = canvas.getContext("2d");
@@ -38,8 +37,8 @@ class GameView{
         const backgroundMusic = new Audio();
         backgroundMusic.src = './src/assets/audio/sunnyDay_audio.mp3'
         let backgroundON = false;
+        backgroundMusic.loop = true;
         volumeButton.addEventListener("click",function (){
-            console.log(backgroundON);
             if (backgroundON === false) {
                 backgroundON = true;
                 backgroundMusic.play();
@@ -180,7 +179,7 @@ class GameView{
             sunnyHeartEmpty5.classList.remove("hidden"); 
 
             if(canvas3.getContext){
-                let startGame = new sunnyStatus();
+                let startGame = new sunnyStatus(ctx);
             }
         
         })

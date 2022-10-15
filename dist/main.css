@@ -22,41 +22,48 @@ body {
   background-size: 100% 100%;
 }
 
-#titleImg {
-  position: fixed;
-  top: 2%;
-  left: 10%;
-  width: 80vw;
-  height: 92vh;
-  z-index: -5;
-}
-
-.another-canvas-container {
+#scoreCanvas {
   padding: 0;
   margin: auto;
   position: relative;
   width: 80vw;
-  height: 92vh;
-  border: solid 15px rgb(192, 239, 208);
-  border-radius: 40px;
-  background-size: 100% 100%;
+  height: 90vh;
+  pointer-events: none;
 }
 
-#adventureBg {
+#titleImg {
+  position: absolute;
+  border-radius: 30px;
   position: fixed;
   top: 2%;
   left: 10%;
   width: 80vw;
-  height: 92vh;
+  height: 91vh;
+  margin: auto;
+  z-index: -5;
+}
+
+#adventureBg {
+  position: absolute;
+  border-radius: 30px;
+  position: fixed;
+  top: 2%;
+  left: 10%;
+  width: 80vw;
+  height: 91vh;
+  margin: auto;
   z-index: -5;
 }
 
 #losingImg {
+  position: absolute;
+  border-radius: 30px;
   position: fixed;
   top: 2%;
   left: 10%;
   width: 80vw;
-  height: 90vh;
+  height: 91vh;
+  margin: auto;
   z-index: -5;
 }
 
@@ -75,12 +82,11 @@ body {
 .menu-button li {
   cursor: pointer;
   margin: 0px auto;
-  margin-top: 20px;
+  margin-top: 1vw;
   width: 12vw;
-  padding: 10px;
+  padding: 0.9vw;
   color: #313133;
   font-family: "DynaPuff", cursive;
-  border-radius: 10px;
   text-transform: uppercase;
   letter-spacing: 1.3px;
   background: linear-gradient(90deg, rgb(238, 239, 162) 10%, rgb(208, 191, 231) 80%);
@@ -89,6 +95,7 @@ body {
   box-shadow: 12px 12px 24px rgba(39, 136, 126, 0.64);
   transition: all 0.3s ease-in-out 0s;
   z-index: 1001;
+  font-size: 1vw;
 }
 
 .menu-button li:hover, #return-to-menu:hover {
@@ -133,16 +140,16 @@ body {
   z-index: 1001;
   right: 19%;
   bottom: 4%;
-  width: 100px;
+  width: 10vw;
   font-family: "DynaPuff", cursive;
   margin: 0px auto;
   margin-top: 20px;
-  width: 150px;
-  padding: 10px;
+  padding: 0.7vw;
   color: rgb(255, 255, 255);
   text-shadow: 1px 1px rgb(84, 79, 79);
   border-radius: 100px;
   background: linear-gradient(0.25turn, rgb(172, 255, 236) 10%, pink 70%);
+  font-size: 1vw;
 }
 
 .social-buttons {
@@ -205,14 +212,16 @@ body {
 #water-img:hover {
   cursor: pointer;
   transform: translateY(-6px);
+  filter: drop-shadow(0 0 1vw white);
 }
 
 #water {
   width: 7vw;
   height: 14vh;
   position: fixed;
-  top: 34%;
+  top: 39%;
   left: 27%;
+  pointer-events: none;
 }
 
 #food-img {
@@ -226,14 +235,17 @@ body {
 #food-img:hover {
   cursor: pointer;
   transform: translateY(-6px);
+  color: #fff;
+  filter: drop-shadow(0 0 1vw white);
 }
 
 #food {
   width: 7vw;
   height: 14vh;
   position: fixed;
-  top: 34%;
+  top: 39%;
   left: 20%;
+  pointer-events: none;
 }
 
 #thirst-img {
@@ -271,24 +283,26 @@ body {
 #shampoo-img:hover {
   cursor: pointer;
   transform: translateY(-6px);
+  filter: drop-shadow(0 0 1vw white);
 }
 
 #soap {
   width: 11vw;
   height: 15vh;
   position: absolute;
-  bottom: 26%;
-  right: 30%;
+  bottom: 28%;
+  right: 29%;
+  pointer-events: none;
 }
 
 .sunny-status {
   font-family: "DynaPuff", cursive;
-  font-size: 2.5vh;
+  font-size: 1.3vw;
   color: aquamarine;
   -webkit-text-stroke: 0.7px rgb(0, 0, 0);
   position: fixed;
-  top: 9%;
-  left: 11.5%;
+  top: 8%;
+  left: 11%;
   z-index: 1;
   line-height: 2;
 }
@@ -299,7 +313,6 @@ body {
   height: 15vh;
   top: 7%;
   left: 25%;
-  z-index: -5;
 }
 
 #healthbar2-img {
@@ -308,7 +321,6 @@ body {
   height: 15vh;
   top: 7%;
   left: 25%;
-  z-index: -4;
 }
 
 #healthbar3-img {
@@ -317,7 +329,6 @@ body {
   height: 15vh;
   top: 7%;
   left: 25%;
-  z-index: -3;
 }
 
 #healthbar4-img {
@@ -326,7 +337,6 @@ body {
   height: 15vh;
   top: 7%;
   left: 25%;
-  z-index: -2;
 }
 
 #healthbar5-img {
@@ -335,7 +345,6 @@ body {
   height: 15vh;
   top: 7%;
   left: 25%;
-  z-index: -1;
 }
 
 #healthbar2-1-img {
@@ -344,7 +353,6 @@ body {
   height: 15vh;
   top: 13%;
   left: 25%;
-  z-index: -5;
 }
 
 #healthbar2-2-img {
@@ -353,7 +361,6 @@ body {
   height: 15vh;
   top: 13%;
   left: 25%;
-  z-index: -4;
 }
 
 #healthbar2-3-img {
@@ -362,7 +369,6 @@ body {
   height: 15vh;
   top: 13%;
   left: 25%;
-  z-index: -3;
 }
 
 #healthbar2-4-img {
@@ -371,7 +377,6 @@ body {
   height: 15vh;
   top: 13%;
   left: 25%;
-  z-index: -2;
 }
 
 #healthbar2-5-img {
@@ -380,7 +385,6 @@ body {
   height: 15vh;
   top: 13%;
   left: 25%;
-  z-index: -1;
 }
 
 #healthbar3-1-img {
@@ -521,11 +525,12 @@ body {
 
 #gameOver {
   position: fixed;
-  z-index: 1000;
+  z-index: 99;
   width: 29vw;
   height: 49vh;
   top: 13%;
   left: 35%;
+  pointer-events: none;
 }
 
 #sunnyBestFriend1 {
@@ -560,65 +565,14 @@ body {
   top: 52%;
 }
 
-#play-again {
-  position: fixed;
-  top: 59%;
-  left: 37%;
-  z-index: 100;
-  margin: 0px auto;
-  margin-top: 20px;
-  width: 150px;
-  padding: 20px;
-  color: #313133;
-  font-family: "DynaPuff", cursive;
-  border-radius: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1.3px;
-  background: linear-gradient(90deg, rgb(226, 226, 128) 10%, rgb(196, 147, 255) 80%);
-  border: none;
-  border-radius: 100px;
-  box-shadow: 12px 12px 24px rgba(39, 136, 126, 0.64);
-  transition: all 0.3s ease-in-out 0s;
-}
-
-#play-again:hover {
-  transform: translateY(-8px);
-  cursor: pointer;
-}
-
-#main-menu {
-  position: fixed;
-  top: 50%;
-  right: 20%;
-  z-index: 100;
-  margin: 0px auto;
-  margin-top: 20px;
-  width: 150px;
-  padding: 20px;
-  color: #313133;
-  font-family: "DynaPuff", cursive;
-  border-radius: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1.3px;
-  background: linear-gradient(90deg, rgb(199, 255, 250) 10%, rgb(123, 252, 153) 80%);
-  border: none;
-  border-radius: 100px;
-  box-shadow: 12px 12px 24px rgba(39, 136, 126, 0.64);
-  transition: all 0.3s ease-in-out 0s;
-}
-
-#main-menu:hover {
-  cursor: pointer;
-  transform: translateY(-8px);
-}
-
 #deadSunny {
   position: fixed;
-  z-index: 1000;
+  z-index: 100;
   width: 19vw;
   height: 40vh;
   top: 50%;
   left: 38%;
+  pointer-events: none;
 }
 
 #sunnyCry {
@@ -628,4 +582,34 @@ body {
   top: 43%;
   left: 48%;
   z-index: 200;
+}
+
+#returnToMenu-btn {
+  position: fixed;
+  top: 60%;
+  right: 20%;
+  z-index: 100;
+  margin: 0px auto;
+  margin-top: 1.1vw;
+  width: 13vw;
+  padding: 0.8vw;
+  color: #313133;
+  font-family: "DynaPuff", cursive;
+  font-size: 1vw;
+  border-radius: 8vw;
+  text-transform: uppercase;
+  letter-spacing: 0.1vw;
+  background: linear-gradient(90deg, rgb(199, 255, 250) 10%, rgb(123, 252, 153) 80%);
+  border: none;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+#returnToMenu-btn:hover {
+  cursor: pointer;
+  transform: translateY(-8px);
+  color: white;
+}
+
+#score-tracker {
+  font-size: 3vw;
 }

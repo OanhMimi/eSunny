@@ -1,9 +1,10 @@
 
-import { cloneUniformsGroups } from "three";
+import { cloneUniformsGroups, CubeTexture } from "three";
 import GameView from "./game_view";
 
 class SunnyStatus {
-  constructor() {
+  constructor(ctx) {
+
     var sunnyImg1 = new Image();
     sunnyImg1.src = "./src/models/sunny_1.png";
     document.body.appendChild(sunnyImg1);
@@ -26,6 +27,8 @@ class SunnyStatus {
       }
       imgToDraw = imgToDraw === "one" ? "two" : "one";
     }, 300);
+
+   
 
     this.sunnyElements = {
       healthOne1: document.querySelector("#healthbar1-img"),
@@ -75,9 +78,7 @@ class SunnyStatus {
     this.thirstLevel = document.getElementById("thirst-level");
     this.hygieneLevel = document.getElementById("hygiene-level");
 
-    this.playAgain = document.getElementById("play-again");
-    this.mainMenu = document.getElementById("main-menu");
-
+    this.textPlayButton = document.getElementById("textplay-btn")
     this.canvas = document.getElementById("game-canvas");
     this.canvas3 = document.getElementById("adventureCanvas");
 
@@ -91,6 +92,8 @@ class SunnyStatus {
     this.startHungerInterval();
     this.startThirstInterval();
     this.startCleanlinessInterval();
+    this.scoreTracker();
+    
 
     this.happyStuff.kibbles.addEventListener("click", () => {
       this.feed();
@@ -102,6 +105,19 @@ class SunnyStatus {
       this.clean();
     });
   }
+
+  scoreTracker() {
+    console.log("hello from score")
+    var score = 0;
+
+    var scoreInterval = setInterval(function () {
+        score +=1
+      
+        if (this.gameOver()) {
+            clearInterval(scoreInterval); 
+        }
+    }, 1000); // Run for each second
+};
 
   decrementFoodHealthBar() {
     if (this.hunger === 3) {
@@ -324,8 +340,7 @@ class SunnyStatus {
     gameOverImg.src = "./src/models/sunny_gameOver.png";
     document.body.appendChild(gameOverImg);
     gameOverImg.setAttribute("id", "gameOver");
-    this.mainMenu.classList.remove("hidden");
-    this.playAgain.classList.remove("hidden");
+    this.textPlayButton.classList.add("hidden");
 
     let losingImg = new Image();
     losingImg.src = "./src/assets/background/losing_bg_img.png";
@@ -375,56 +390,17 @@ class SunnyStatus {
     this.thirstLevel.classList.add("hidden");
     this.hygieneLevel.classList.add("hidden");
     clearInterval(this.mainSunny);
-    document.querySelector("#sunnyImg1").remove();
-    document.querySelector("#sunnyImg2").remove();
+    if (document.querySelector("#sunnyImg1")){
+      document.querySelector("#sunnyImg1").remove();
+    }
+    if (document.querySelector("#sunnyImg2")){
+      document.querySelector("#sunnyImg2").remove();
+    }
 
 
-    this.mainMenu.addEventListener("click", () => {
-          document.querySelector("#water").classList.add("hidden");
-          document.querySelector("#food").classList.add("hidden");
-          document.querySelector("#soap").classList.add("hidden");
-          this.mainMenu.classList.add("hidden");
-          gameOverImg.remove();
-          losingImg.remove();
-          deadSunnyImg.remove();
-     
-          this.canvas.classList.remove("hidden");
-          this.canvas3.classList.add("hidden");
-          document.querySelector("#adventureBg").classList.add("hidden");
-          document.querySelector("#instructions-btn").classList.remove("hidden");
-          document.querySelector("#textplay-btn").classList.remove("hidden");
+    document.querySelector("#returnToMenu-btn").classList.remove("hidden");
+   
 
-          this.playAgain.classList.add("hidden");
-
-          clearInterval(this.mainSunny);
-          clearInterval(this.cleanlinessInterval);
-          clearInterval(this.hungerInterval);
-          clearInterval(this.thirstInterval);
-
-          const gameOptions = {
-            dim: [1100,680]
-           }
-          let returnMenu = new GameView(gameOptions);
-
-
-    });
-
-    this.textPlayButton.classList.remove("hidden");
-    this.textPlayButton.innerText = "Play Again";
-    this.textPlayButton.addEventListener("click", () => {
-      gameOverImg.remove();
-      losingImg.remove();
-      deadSunnyImg.remove();
-      document.querySelector("#water").classList.add("hidden");
-      document.querySelector("#food").classList.add("hidden");
-      document.querySelector("#soap").classList.add("hidden");
-      document.querySelector("#main-menu").classList.add("hidden");
-
-      clearInterval(this.mainSunny);
-      //   sunnyImg1.remove();
-      //   sunnyImg2.remove();
-      let newGame = new SunnyStatus();
-    });
   }
 }
 

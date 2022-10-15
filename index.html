@@ -58,20 +58,16 @@
             <p id="hygiene-level" class="hidden">Hygiene Level: </p>
         </div>
 
-        <div>
-            <button class="hidden" id="main-menu">Back to Menu</button>
-        </div>
-        <div>
-            <button class="hidden" id="play-again">Play Again</button>
-        </div>
-        
 
+        <div>
+            <button class="hidden" id="returnToMenu-btn" type="button" onClick="window.location.reload();">Return To Main Menu</button>
+
+        </div>
+        <canvas id="scoreCanvas" width="1100" height="680"></canvas>
         
 
     </div>
-    <!-- <div class="another-canvas-container">
-        <canvas class ="hidden" id="house-canvas" width= 1100 height=680></canvas>
-    </div> -->
+
 
     <audio id="background-music" src="./src/assets/audio/sunnyDay_audio.mp3">Background music</audio>
 </body>
