@@ -325,7 +325,7 @@ class SunnyStatus {
     this.thirstInterval = setInterval(() => {
       this.thirst -= 1;
       this.decrementWaterHealthBar();
-    }, 4000);
+    }, 3500);
   }
 
   startCleanlinessInterval() {
